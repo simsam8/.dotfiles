@@ -1,0 +1,10 @@
+[user]
+	email = simvedaa@gmail.com
+	name = simsam8
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
