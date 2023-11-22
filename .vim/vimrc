@@ -1,0 +1,165 @@
+
+" Basic configuration
+
+" PLUGINS ------------------------------------------------- {{{
+
+call plug#begin('~/.vim/plugged')
+
+
+    Plug 'dense-analysis/ale'     " ALE
+
+    Plug 'preservim/nerdtree'     " NERDTREE
+
+    Plug 'ycm-core/youcompleteme' " YouCompleteMe
+
+    Plug 'tpope/vim-fugitive'     " Fugitive
+
+    Plug 'airblade/vim-gitgutter'  " vim-gitgutter
+
+    Plug 'bluz71/vim-mistfly-statusline' " statusline
+
+call plug#end()
+
+"" ALE
+let g:ale_linters = {'python': ['flake8'], 'php': ['phpcs', 'langserver', 'phan'],}
+let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'python': ['black'], 'php': ['phpcbf']}
+let g:ale_fix_on_save = 1
+
+
+"" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
+" }}}
+
+
+" MAPPINGS ------------------------------------------------ {{{
+
+" map_mode <what_you_type> <what_is_executed>
+" nnoremap - maps keys in normal mode
+" inoremap - maps keys in insert mode
+" vnoremap - maps keys in visual mode
+
+
+let mapleader = "'" " remap the leader to ''', right next to 'l'
+
+" vim powered terminal in split window
+map <leader>t :term ++close<cr>
+tmap <leader>t <c-w>:term ++close<cr>
+
+" vim powered terminal in new tab
+map <leader>T :tab term ++close<cr>
+tmap <leader>T <c-w>:tab term ++close<cr>
+
+
+" nnoremap
+" Use space as : in command mode
+nnoremap <space> :
+nnoremap <leader>n :NERDTreeToggle<CR>
+
+" inoremap
+" Use jj as escape
+inoremap jk <ESC>
+
+
+" }}}
+
+
+" VIMSCRIPT ----------------------------------------------- {{{
+
+" This will enable code folding.
+" Use the marker method of folding.
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
+
+" COLOR
+set termguicolors   " Ignores terminals color settingo and uses GUI version of Vim
+set t_Co=265
+set background=light
+colorscheme nord
+"highlight Normal ctermbg=NONE
+"highlight nonText ctermbg=NONE
+
+" EDITOR
+set nocompatible    " Disable compatibility with vi which can cause unexpected issues
+set hlsearch 		" highlight all search results
+set ignorecase 		" do case insensitive search
+set incsearch 		" show incremental search results as you type
+set smartcase		" allows to specifically to search for capital letters
+set number		    " display line number
+set noswapfile 		" disable swap file
+set nowrap		    " Do not wrap lines.
+syntax on		    " Turns syntax highlighting on
+set shiftwidth=4	" Set shift width to 4 spaces
+set tabstop=4		" Set tab width to 4 collumns
+set expandtab		" Use space characterl instead ef tabs
+set showcmd 		" Show partial command you type in the last line of the screen
+set nobackup		" Do not save backup files
+set scrolloff=40	" Do not let cursor scroll below or above N number of lines whon scrolling
+set history=1000    " Set the commands to save in history defaust number is 20
+set updatetime=100  " Set vim's update time
+set laststatus=2
+
+" Set relative line number to on
+set number relativenumber
+set nu rnu
+
+" WILD MENU
+set wildmenu        " Enable auto completion menu after pressing TAB
+                    " Make wildmenu behave like similar to Bash competion
+set wildmode=list:longest
+                    " Wildmenu will ignore files with these extensions
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+
+" FILETYPE
+filetype on		    " enable type file detection. Vim will be able to try to detect the type of file in use.
+filetype plugin on 	" Enable pluins and load plugin for the detected file type
+filetype indent on 	" Load an indent file for the detected file type
+" }}}
+
+
+" STATUS LINE --------------------------------------------- {{{
+"
+" set statusline=
+" set statusline+=%#DiffAdd#%{(mode()=='n')?'\ \ NORMAL\ ':''}
+" set statusline+=%#DiffChange#%{(mode()=='i')?'\ \ INSERT\ ':''}
+" set statusline+=%#DiffDelete#%{(mode()=='r')?'\ \ RPLACE\ ':''}
+" set statusline+=%#Cursor#%{(mode()=='v')?'\ \ VISUAL\ ':''}
+" set statusline+=\ %n\           " buffer number
+" set statusline+=%#Visual#       " colour
+" set statusline+=%{&paste?'\ PASTE\ ':''}
+" set statusline+=%{&spell?'\ SPELL\ ':''}
+" set statusline+=%#CursorIM#     " colour
+" set statusline+=%R                        " readonly flag
+" set statusline+=%M                        " modified [+] flag
+" set statusline+=%#Cursor#               " colour
+" set statusline+=%#CursorLine#     " colour
+" set statusline+=\ %t\                   " short file name
+" set statusline+=%=                          " right align
+" set statusline+=%#CursorLine#   " colour
+" set statusline+=%4*\%{b:gitbranch}       " include git branch
+" set statusline+=%#CursorLine#   " colour
+" set statusline+=\ %Y\                   " file type
+" set statusline+=%#CursorIM#     " colour
+" set statusline+=\ %3l:%-2c\         " line + column
+" set statusline+=%#Cursor#       " colour
+" set statusline+=\ %3p%%\                " percentage
+"
+" function! StatuslineGitBranch()
+"   let b:gitbranch=""
+"   if &modifiable
+"     lcd %:p:h
+"     let l:gitrevparse=system("git rev-parse --abbrev-ref HEAD")
+"     lcd -
+"     if l:gitrevparse!~"fatal: not a git repository"
+"       let b:gitbranch="(".substitute(l:gitrevparse, '\n', '', 'g').") "
+"     endif
+"   endif
+" endfunction
+"
+" augroup GetGitBranch
+"   autocmd!
+"   autocmd VimEnter,WinEnter,BufEnter * call StatuslineGitBranch()
+" augroup END
+" " }}}
