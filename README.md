@@ -1,6 +1,11 @@
 # .dotfiles
 
+update flake.lock -> nix flake update
 
-To create a symbolic link:
+rebuild system -> sudo nixos-rebuild switch --flake .#optional_config_name
 
-    ln -s ~/.dotfiles/."dotfile/folder" ~/."dotfile/folder"
+rebuild home manager -> home-manager switch flake .#optional_config_name
+
+-To create a symbolic link:
+-
+-    ln -s ~/.dotfiles/."dotfile/folder" ~/."dotfile/folder"
