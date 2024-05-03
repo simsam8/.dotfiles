@@ -19,6 +19,12 @@
 
   imports = [
     inputs.nix-colors.homeManagerModules.default
+    user/sh.nix
+    user/git.nix
+    user/alacritty.nix
+    user/neovim/neovim.nix
+    user/tmux/tmux.nix
+    user/media.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.nord;
@@ -51,6 +57,7 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
+    "scripts".source = ./scripts;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
@@ -78,102 +85,6 @@
     # EDITOR = "emacs";
   };
 
-
-  programs.bash = {
-    enable = true;
-    shellAliases = {
-      ll = "ls -la";
-      ".." = "cd ..";
-      nv = "nvim";
-      jpl = "jupyter lab";
-      envs = "virtualenv venv";
-      enva = "source venv/bin/activate";
-      envd = "deactivate";
-      tm = "tmux";
-    };
-  };
-  
-  programs.git = {
-    enable = true;
-    userName = "simsam8";
-    userEmail = "simvedaa@gmail.com";
-    extraConfig = 
-    {
-      init.defaultBranch = "main"; 
-    };
-  };
-
-  home.file.".config/nvim" = 
-  {
-    source = ./nvchad;
-    recursive = true;
-    force = true;
-  };
-
-  programs.alacritty = {
-    enable = true;
-    settings = {
-      font = {
-        normal = {
-          family = "RobotoMono Nerd Font";
-          style = "Regular";
-        };
-        bold = {
-          family = "RobotoMono Nerd Font";
-          style = "Bold";
-        };
-        italic = {
-          family = "RobotoMono Nerd Font";
-          style = "Italic";
-        };
-        bold_italic = {
-          family = "RobotoMono Nerd Font";
-          style = "Bold Italic";
-        };
-      };
-      size = 16;
-      cursor.style = "Underline";
-
-      colors = with config.colorScheme.colors; {
-        bright = {
-          black = "0x${base03}";
-          blue = "0x${base0D}";
-          cyan = "0x${base0C}";
-          green = "0x${base0B}";
-          magenta = "0x${base0E}";
-          red = "0x${base08}";
-          white = "0x${base06}";
-          yellow = "0x${base09}";
-        };
-        cursor = {
-          cursor = "0x${base06}";
-          text = "0x${base00}";
-        };
-        normal = {
-          black = "0x${base00}";
-          blue = "0x${base0D}";
-          cyan = "0x${base0C}";
-          green = "0x${base0B}";
-          magenta = "0x${base0E}";
-          red = "0x${base08}";
-          white = "0x${base06}";
-          yellow = "0x${base0A}";
-        };
-        primary = {
-          background = "0x${base00}";
-          foreground = "0x${base06}";
-        };
-      };
-    };
-  };
-
-
-  programs.oh-my-posh = {
-    enable = true;
-    useTheme = "peru";
-  };
-
-  home.file.".config/tmux".source = ./tmux;
   # source existing configs
   # home.file.".config/.vimrc".source = ./.vimrc;
 

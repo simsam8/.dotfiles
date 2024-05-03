@@ -77,14 +77,7 @@
       firefox
       vivaldi
       tmux
-      neovim
-      alacritty
-      alacritty-theme
-      neofetch
       oh-my-posh
-      python3
-      python311Packages.pip
-      python311Packages.virtualenv
     #  thunderbird
     ];
   };
@@ -96,11 +89,28 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    neovim
     git
     wget
     firefox
     clang
     unzip
+    python3
+    python311Packages.pip
+    python311Packages.virtualenv
+    python311Packages.pylint
+    python311Packages.flake8
+    python311Packages.black
+    python311Packages.isort
+    nodejs_21
+    nodePackages.pyright
+    lua-language-server
+    nil
+  ];
+
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
