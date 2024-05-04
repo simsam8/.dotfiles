@@ -74,8 +74,6 @@
     description = "Simon Vedaa";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      firefox
-      vivaldi
     #  thunderbird
     ];
   };
