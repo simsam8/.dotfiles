@@ -14,7 +14,12 @@ let
 in
 {
   home.packages = with pkgs; [
-    gnugrep fzf onefetch neofetch
+    gnugrep 
+    fzf
+    onefetch
+    neofetch
+    oh-my-posh
+    nodePackages.bash-language-server
   ];
 
   programs.bash = {

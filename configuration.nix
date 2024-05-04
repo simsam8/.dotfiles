@@ -76,8 +76,6 @@
     packages = with pkgs; [
       firefox
       vivaldi
-      tmux
-      oh-my-posh
     #  thunderbird
     ];
   };
