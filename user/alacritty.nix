@@ -1,10 +1,11 @@
-{ pkgs, config, ... }:
+{ pkgs, lib, config, ... }:
 
 {
   home.packages = with pkgs; [ alacritty alacritty-theme ];
   programs.alacritty = {
     enable = true;
     settings = {
+      window.opacity = lib.mkForce 0.75;
       font = {
         normal = {
           family = "RobotoMono Nerd Font";
@@ -23,7 +24,7 @@
           style = "Bold Italic";
         };
       };
-      size = 16;
+      # size = 16;
       cursor.style = "Underline";
 
       colors = with config.colorScheme.colors; {

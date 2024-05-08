@@ -1,10 +1,13 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, userSettings, systemSettings, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "simsam";
-  home.homeDirectory = "/home/simsam";
+  home.username = userSettings.username;
+  home.homeDirectory = "/home/" + userSettings.username;
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -19,12 +22,15 @@
 
   imports = [
     inputs.nix-colors.homeManagerModules.default
+    # inputs.hyprland.homeManagerModules.default
     user/sh.nix
     user/git.nix
     user/alacritty.nix
     user/neovim/neovim.nix
     user/tmux/tmux.nix
     user/media.nix
+    user/hyprland.nix
+    user/lang/python.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.nord;
@@ -33,12 +39,12 @@
   home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
-    roboto-mono
-    (pkgs.nerdfonts.override {
-      fonts = [
-        "RobotoMono"
-      ];
-     })
+    # roboto-mono
+    # (pkgs.nerdfonts.override {
+    #   fonts = [
+    #     "RobotoMono"
+    #   ];
+    #  })
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -82,12 +88,11 @@
   #  /etc/profiles/per-user/simsam/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = userSettings.editor;
+    SPAWNEDITOR = userSettings.spawnEditor;
+    TERM = userSettings.term;
+    BROWSER = userSettings.browser;
   };
 
-  # source existing configs
-  # home.file.".config/.vimrc".source = ./.vimrc;
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  news.display = "silent";
 }
