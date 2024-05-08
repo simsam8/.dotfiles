@@ -9,6 +9,7 @@
     hypridle
     hyprpaper
     pavucontrol
+    brightnessctl
     wev
     # networkmanagerapplet
     dmenu
