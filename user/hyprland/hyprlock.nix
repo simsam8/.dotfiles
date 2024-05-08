@@ -1,17 +1,17 @@
-{ ... }:
+{ config, userSettings, ... }:
 
 {
-  # TODO: Configure with nix-colors
+  # TODO: Configure with nix-colors and stylix
 
   home.file.".config/hypr/hyprlock.conf".text = ''
      background {
         monitor =
-        #path = /home/me/someImage.png   # supports png, jpg, webp (no animations, though)
-        color = rgba(25, 20, 20, 1.0)
+        path = ~/.dotfiles/user/backgrounds/nixos.png   # supports png, jpg, webp (no animations, though)
+        # color = rgba(25, 20, 20, 1.0)
 
         # all these options are taken from hyprland, see https://wiki.hyprland.org/Configuring/Variables/#blur for explanations
-        blur_passes = 0 # 0 disables blurring
-        blur_size = 7
+        blur_passes = 4 # 0 disables blurring
+        blur_size = 5
         noise = 0.0117
         contrast = 0.8916
         brightness = 0.8172
@@ -29,7 +29,7 @@
         outer_color = rgb(151515)
         inner_color = rgb(200, 200, 200)
         font_color = rgb(10, 10, 10)
-        fade_on_empty = false
+        fade_on_empty = true
         fade_timeout = 1000 # Milliseconds before fade_on_empty is triggered.
         placeholder_text = <i>Input Password...</i> # Text rendered in the input box when it's empty.
         hide_input = false
@@ -50,14 +50,26 @@
     }
     label {
       monitor =
-      text = Hi there, $USER
+      text = Welcome #, $USER
       text_align = center # center/right or any value for default left. multi-line text alignment inside label container
       color = rgba(200, 200, 200, 1.0)
       font_size = 25
-      font_family = Noto Sans
+      font_family = ''+userSettings.font+''
       rotate = 0 # degrees, counter-clockwise
 
-      position = 0, 80
+      position = 0, 90
+      halign = center
+      valign = center
+    }
+    label {
+      monitor =
+      text = $TIME
+      color = rgba(200, 200, 200, 1.0)
+      font_size = 20
+      font_family = ''+userSettings.font+''
+      rotate = 0 # degrees, counter-clockwise
+
+      position = 0, 40
       halign = center
       valign = center
     }
