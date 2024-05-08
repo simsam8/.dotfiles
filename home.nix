@@ -29,7 +29,7 @@
     user/neovim/neovim.nix
     user/tmux/tmux.nix
     user/media.nix
-    user/hyprland.nix
+    user/hyprland
     user/lang/python.nix
   ];
 
