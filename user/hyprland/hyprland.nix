@@ -22,7 +22,8 @@ in
       exec = pkill waybar & sleep 0.5 && waybar
       monitor = ,preferred,auto,1
       exec-once = hyprctl setcursor '' + config.gtk.cursorTheme.name + " " + builtins.toString config.gtk.cursorTheme.size + ''
-      exec-once = hyprpaper
+      exec-once = swww-daemon
+      exec = swww img ~/.dotfiles/user/backgrounds/nixos.png
       exec-once = hypridle
       exec-once = dunst
 

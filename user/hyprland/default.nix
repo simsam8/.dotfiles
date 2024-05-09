@@ -7,7 +7,8 @@
     fuzzel
     hyprlock
     hypridle
-    hyprpaper
+    # hyprpaper
+    swww
     pavucontrol
     brightnessctl
     wev
@@ -22,7 +23,7 @@
     ./fuzzel.nix
     ./wlogout.nix
     ./hypridle.nix
-    ./hyprpaper.nix
+    # ./hyprpaper.nix
     ./hyprlock.nix
   ];
 
