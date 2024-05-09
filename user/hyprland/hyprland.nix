@@ -1,5 +1,9 @@
 {pkgs, inputs, config, userSettings, lib, ...}:
 
+let 
+  palette = config.colorScheme.colors;
+
+in
 {
   gtk.cursorTheme = {
     package = pkgs.quintom-cursor-theme;
@@ -22,6 +26,17 @@
       exec-once = hypridle
       exec-once = dunst
 
+      layerrule = blur, logout_dialog
+
+      general {
+        layout = master
+        border_size = 3
+        col.active_border = 0xff${palette.base04}
+        col.inactive_border = 0x33${palette.base00}
+        resize_on_border = true
+        gaps_in = 2 
+        gaps_out = 2
+      }
 
       # Input config
       input {
@@ -44,6 +59,24 @@
         workspace_swipe = true
         workspace_swipe_fingers = 3
       }
+
+      # Decoration config
+
+      decoration {
+        rounding = 10
+        active_opacity = 1.0
+        # inactive_opacity = 0.75
+
+        blur {
+          enabled = true
+          size = 5 
+          passes = 2 
+          ignore_opacity = true
+          contrast = 1.17
+          brightness = 0.8
+        }
+      }
+
       misc {
         disable_hyprland_logo = true
         disable_splash_rendering = true
