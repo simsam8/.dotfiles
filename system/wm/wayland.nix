@@ -1,17 +1,17 @@
- { config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 
- {
-   imports = [
-    ./pipewire.nix
-    ./dbus.nix
-    ./gnome-keyring.nix
-    ./fonts.nix
-   ];
+{
+  imports = [
+  ./pipewire.nix
+  ./dbus.nix
+  ./gnome-keyring.nix
+  ./fonts.nix
+  ];
 
-   environment.systemPackages = with pkgs;
-   [
-    wayland waydroid
-   ];
+  environment.systemPackages = with pkgs;
+  [
+    wayland waydroid lightdm
+  ];
 
   # Configure xwayland
   services.xserver = {
@@ -22,11 +22,8 @@
     };
   };
 
-  services.displayManager.sddm = {
+  services.xserver.displayManager.lightdm = {
     enable = true;
-    wayland.enable = true;
-    enableHidpi = true;
-    # theme = "nord" TODO: add theme
-    package = pkgs.sddm;
+    greeters.slick.enable = true;
   };
- }
+}
