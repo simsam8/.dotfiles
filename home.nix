@@ -31,6 +31,7 @@
     user/media.nix
     user/hyprland
     user/lang/python.nix
+    user/thunar.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.nord;
