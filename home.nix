@@ -32,6 +32,7 @@
     user/hyprland
     user/lang/python.nix
     user/thunar.nix
+    user/discord.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.nord;
