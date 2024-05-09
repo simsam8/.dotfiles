@@ -2,5 +2,8 @@
 {pkgs, ...}:
 
 {
-  home.packages = [ pkgs.stremio ];
+  home.packages = with pkgs; [ 
+    stremio 
+    spotify
+  ];
 }
