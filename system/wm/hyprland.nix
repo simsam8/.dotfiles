@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, userSettings, ... }:
 
 {
   # Import wayland config
@@ -20,6 +20,17 @@
   };
 
   services.gnome.gnome-keyring.enable = true;
+
+  services.greetd = {
+    enable = true;
+    settings = rec {
+      initial_session = {
+        command = "${pkgs.hyprland}/bin/Hyprland";
+        user = userSettings.username;
+      };
+      default_session = initial_session;
+    };
+  };
 
   programs = {
     hyprland = {

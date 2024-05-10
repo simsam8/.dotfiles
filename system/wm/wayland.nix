@@ -10,7 +10,10 @@
 
   environment.systemPackages = with pkgs;
   [
-    wayland waydroid lightdm
+    wayland 
+    waydroid 
+    greetd.greetd
+    lightdm
   ];
 
   # Configure xwayland
@@ -22,7 +25,7 @@
     };
   };
 
-  services.xserver.displayManager.lightdm = {
+  services.xserver.displayManager.lightdm = if userSettings.wm == "hyprland" then {} else {
     enable = true;
     greeters.slick.enable = true;
   };
