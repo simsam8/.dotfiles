@@ -17,8 +17,8 @@
   services.xserver = {
     enable = true;
     xkb = {
-      layout = "us, us";
-      variant = ",dvp";
+      layout = "us, us, no, no";
+      variant = ",dvp,,dvorak";
     };
   };
 
