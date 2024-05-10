@@ -17,75 +17,77 @@ in
     xwayland.enable = true;
     systemd.enable = true;
 
-
-    extraConfig = ''
-      exec = pkill waybar & sleep 0.5 && waybar
-      monitor = ,preferred,auto,1
-      exec-once = hyprctl setcursor '' + config.gtk.cursorTheme.name + " " + builtins.toString config.gtk.cursorTheme.size + ''
-      exec-once = swww-daemon
-      exec = swww img ~/.dotfiles/user/backgrounds/nixos.png
-      exec-once = hypridle
-      exec-once = dunst
-
-      layerrule = blur, logout_dialog
-
-      general {
-        layout = master
-        border_size = 3
-        col.active_border = 0xff${palette.base04}
-        col.inactive_border = 0x33${palette.base00}
-        resize_on_border = true
-        gaps_in = 2 
-        gaps_out = 2
-      }
-
-      # Input config
-      input {
-        kb_layout = us, us 
-        kb_variant = basic, dvp
-        kb_model =
-        kb_options = grp:alt_space_toggle
-        kb_rules =
-        resolve_binds_by_sym = 1
-
-        follow_mouse = 1
-
-        touchpad {
-            natural_scroll = true
-        }
-
-        sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
-      }
-      gestures {
-        workspace_swipe = true
-        workspace_swipe_fingers = 3
-      }
-
-      # Decoration config
-
-      decoration {
-        rounding = 10
-        active_opacity = 1.0
-        # inactive_opacity = 0.75
-
-        blur {
-          enabled = true
-          size = 5 
-          passes = 2 
-          ignore_opacity = true
-          contrast = 1.17
-          brightness = 0.8
-        }
-      }
-
-      misc {
-        disable_hyprland_logo = true
-        disable_splash_rendering = true
-      }
-    '';
-
     settings = {
       "$mod" = "SUPER";
+      monitor = [
+        ",preferred,auto,1"
+      ];
+
+      exec-once = [
+        "pkill waybar & sleep 0.5 && waybar"
+        "swww-daemon"
+        "swww img ~/.dotfiles/user/backgrounds/nixos.png"
+        "hyprctl setcursor ${config.gtk.cursorTheme.name} ${builtins.toString config.gtk.cursorTheme.size}"
+        "hypridle"
+        "dunst"
+      ];
+
+      general = {
+        layout = "master";
+        border_size = 3;
+        "col.active_border" = "0xff${palette.base04}";
+        "col.inactive_border" = "0x33${palette.base00}";
+        resize_on_border = true;
+        gaps_in = 2;
+        gaps_out = 2;
+      };
+
+      input = {
+        kb_layout = "us, us, no, no"; 
+        kb_variant = "basic, dvp, basic, dvorak";
+        kb_options = "grp:alt_space_toggle";
+        resolve_binds_by_sym = 1;
+
+        follow_mouse = 1;
+
+        touchpad = {
+            natural_scroll = true;
+        };
+
+        sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
+
+      };
+
+      gestures = {
+        workspace_swipe = true;
+        workspace_swipe_fingers = 3;
+      };
+
+      decoration = {
+        rounding = 10;
+        active_opacity = 1.0;
+        # inactive_opacity = 0.75
+
+        blur = {
+          enabled = true;
+          size = 5;
+          passes = 2;
+          ignore_opacity = true;
+          contrast = 1.17;
+          brightness = 0.8;
+        };
+      };
+
+      misc = {
+        disable_hyprland_logo = true;
+        disable_splash_rendering = true;
+      };
+
+      layerrule = [
+        "blur, logout_dialog"
+      ];
+
+
       bind =
         [
           "$mod, T, exec, alacritty"
@@ -150,5 +152,6 @@ in
         ",XF86MonBrightnessUp,exec,brightnessctl set +5%"
       ];
     };
+
   };
 }
