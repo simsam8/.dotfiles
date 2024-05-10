@@ -22,20 +22,19 @@
 
   imports = [
     inputs.nix-colors.homeManagerModules.default
-    # inputs.hyprland.homeManagerModules.default
     user/sh.nix
     user/git.nix
     user/alacritty.nix
     user/neovim/neovim.nix
     user/tmux/tmux.nix
     user/media.nix
-    user/hyprland
     user/lang/python.nix
     user/thunar.nix
     user/discord.nix
+    user/${userSettings.wm}
   ];
 
-  colorScheme = inputs.nix-colors.colorSchemes.nord;
+  colorScheme = inputs.nix-colors.colorSchemes."${userSettings.theme}";
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
