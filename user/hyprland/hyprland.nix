@@ -26,7 +26,7 @@ in
       exec-once = [
         "pkill waybar & sleep 0.5 && waybar"
         "swww-daemon"
-        "swww img ~/.dotfiles/user/backgrounds/nixos.png"
+        "~/.dotfiles/user/hyprland/swww_randomize.sh ~/.dotfiles/user/backgrounds/"
         "hyprctl setcursor ${config.gtk.cursorTheme.name} ${builtins.toString config.gtk.cursorTheme.size}"
         "hypridle"
         "dunst"
