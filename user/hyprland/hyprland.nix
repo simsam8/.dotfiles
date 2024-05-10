@@ -24,6 +24,7 @@ in
       ];
 
       exec-once = [
+        "hyprlock"
         "pkill waybar & sleep 0.5 && waybar"
         "swww-daemon"
         "~/.dotfiles/user/hyprland/swww_randomize.sh ~/.dotfiles/user/backgrounds/"
