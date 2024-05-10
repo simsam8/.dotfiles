@@ -3,12 +3,10 @@ let
   palette = config.colorScheme.colors;
 in
 {
-  # TODO: Configure with nix-colors and stylix
-
   home.file.".config/hypr/hyprlock.conf".text = ''
      background {
         monitor =
-        path = ~/.dotfiles/user/backgrounds/nixos.png   # supports png, jpg, webp (no animations, though)
+        path = ~/.dotfiles/user/backgrounds/lock.png   # supports png, jpg, webp (no animations, though)
         # color = rgba(25, 20, 20, 1.0)
 
         # all these options are taken from hyprland, see https://wiki.hyprland.org/Configuring/Variables/#blur for explanations
@@ -26,7 +24,7 @@ in
         outline_thickness = 3
         dots_size = 0.33 # Scale of input-field height, 0.2 - 0.8
         dots_spacing = 0.15 # Scale of dots' absolute size, 0.0 - 1.0
-        dots_center = false
+        dots_center = true
         dots_rounding = -1 # -1 default circle, -2 follow input-field rounding
         outer_color = rgb(${palette.base05})
         inner_color = rgb(${palette.base00})

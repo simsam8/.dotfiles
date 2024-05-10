@@ -24,6 +24,7 @@ in
       ];
 
       exec-once = [
+        "~/.dotfiles/user/hyprland/random_background.sh" # set a random background for lock screen
         "hyprlock"
         "pkill waybar & sleep 0.5 && waybar"
         "swww-daemon"
