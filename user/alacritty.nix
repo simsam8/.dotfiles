@@ -5,6 +5,12 @@
   programs.alacritty = {
     enable = true;
     settings = {
+      window.padding = {
+        x = 5;
+        y = 5;
+      };
+      window.dynamic_padding = true;
+
       window.opacity = lib.mkForce 0.75;
       font = {
         normal = {
