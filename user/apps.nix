@@ -8,5 +8,6 @@
     obsidian
     obs-studio
     webcord-vencord
+    hyprshot
   ];
 }
