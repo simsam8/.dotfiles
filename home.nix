@@ -30,6 +30,7 @@
     user/lang/python.nix
     user/thunar.nix
     user/apps.nix
+    user/gtk.nix
     user/${userSettings.wm}
   ];
 
