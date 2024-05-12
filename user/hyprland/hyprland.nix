@@ -5,13 +5,6 @@ let
 
 in
 {
-  gtk.cursorTheme = {
-    package = pkgs.quintom-cursor-theme;
-    # name = if (config.stylix.polarity == "light") then "Quintom_Ink" else "Quintom_Snow";
-    name = "Quintom_Snow";
-    size = 36;
-  };
-
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -93,7 +86,7 @@ in
       bind =
         [
           "$mod, T, exec, alacritty"
-          "$mod, V, exec, vivaldi"
+          "$mod, V, exec, vivaldi --enable-features=UseOzonePlatform --ozone-platform=wayland"
           "$mod, Q, killactive"
           "$mod, F, fullscreen"
           "$mod, SPACE, exec, fuzzel"
