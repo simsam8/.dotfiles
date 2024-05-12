@@ -27,10 +27,9 @@
     user/alacritty.nix
     user/neovim/neovim.nix
     user/tmux/tmux.nix
-    user/media.nix
     user/lang/python.nix
     user/thunar.nix
-    user/discord.nix
+    user/apps.nix
     user/${userSettings.wm}
   ];
 

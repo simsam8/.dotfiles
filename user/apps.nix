@@ -6,5 +6,7 @@
     stremio 
     spotify
     obsidian
+    obs-studio
+    webcord-vencord
   ];
 }
