@@ -6,6 +6,7 @@
     waybar
     fuzzel
     hyprlock
+    hyprshot
     hypridle
     # hyprpaper
     swww
@@ -18,6 +19,7 @@
   ];
 
   imports = [
+    ./dunst.nix
     ./hyprland.nix
     ./waybar.nix
     ./fuzzel.nix
