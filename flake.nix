@@ -73,7 +73,7 @@
 
   in {
     nixosConfigurations = {
-      system = lib.nixosSystem {
+      t480s = lib.nixosSystem {
         system = systemSettings.system;
         # inherit system;
         specialArgs = { 
@@ -83,7 +83,8 @@
           inherit userSettings;
         };
         modules = [ 
-          ./configuration.nix
+          # ./configuration.nix
+          ./hosts/t480s
           # inputs.hyprland.nixosModules.default 
         ];
       };
