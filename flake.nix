@@ -29,7 +29,7 @@
     };
 
     userSettings = rec {
-      username = "simsam";
+      username = "simsam8";
       name = "Simon";
       email = "simvedaa@gmail.com";
       dotfilesDir = "~/.dotfiles";
@@ -50,7 +50,6 @@
 
     };
 
-    # pkgs = nixpkgs.legacyPackages.${systemSettings.system};
     pkgs = import inputs.nixpkgs {
       system = systemSettings.system;
       config = {
@@ -83,11 +82,22 @@
           inherit userSettings;
         };
         modules = [ 
-          # ./configuration.nix
           ./hosts/t480s
-          # inputs.hyprland.nixosModules.default 
         ];
       };
+      
+      legion5p = lib.nixosSystem {
+       system = systemSettings.system;
+       specialArgs = {
+          inherit inputs;
+          inherit pkgs-stable;
+          inherit systemSettings;
+          inherit userSettings;
+         };
+        modules = [ 
+          ./hosts/legion5p
+        ];
+       };
     };
     homeConfigurations = {
       user = home-manager.lib.homeManagerConfiguration {
