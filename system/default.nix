@@ -26,6 +26,13 @@
   # Ensure nix flakes are enabled
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+
+  ];
+
+  services.xserver.wacom.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -70,6 +77,7 @@
     nodejs_22
     lua-language-server
     nil
+    xf86_input_wacom # wacom tablet
   ];
 
 

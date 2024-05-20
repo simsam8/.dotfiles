@@ -13,6 +13,8 @@ in
     settings = {
       "$mod" = "SUPER";
       monitor = [
+        "desc:BOE 0x0A1F,preferred,auto,1.25"
+        "desc:AOC Q32G1WG4 0x000025FB,2560x1440@74.97,auto,1"
         ",preferred,auto,1"
       ];
 
@@ -47,6 +49,12 @@ in
 
         touchpad = {
             natural_scroll = true;
+        };
+
+        tablet = {
+          transform = 0;
+          # output = "HDMI-A-1";
+          output = "eDP-1";
         };
 
         sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
@@ -147,6 +155,5 @@ in
         ",XF86MonBrightnessUp,exec,brightnessctl set +5%"
       ];
     };
-
   };
 }
