@@ -5,7 +5,7 @@
 
   programs.git = {
     enable = true;
-    userName = "simsam8"; # TODO: change this to follow userSettings
+    userName = userSettings.username;
     userEmail = userSettings.email;
     extraConfig = 
     {
