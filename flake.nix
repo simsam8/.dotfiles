@@ -13,6 +13,11 @@
     home-manager-stable.inputs.nixpkgs.follows = "nixpkgs-stable";
 
     nix-colors.url = "github:misterio77/nix-colors";
+
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, ... }@inputs:

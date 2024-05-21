@@ -31,6 +31,7 @@
     user/thunar.nix
     user/apps.nix
     user/gtk.nix
+    user/firefox.nix
     user/${userSettings.wm}
   ];
 
