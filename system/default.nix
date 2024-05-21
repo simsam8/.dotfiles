@@ -20,7 +20,6 @@
     description = userSettings.name;
     extraGroups = [ "networkmanager" "wheel" "input" "dialout" ];
     packages = [ pkgs.vivaldi ];
-    # uid = 1001;
   };
   
   # Ensure nix flakes are enabled
@@ -70,7 +69,6 @@
     git
     wget
     home-manager
-    firefox
     clang
     unzip
     python3
