@@ -5,9 +5,7 @@ let
     ".." = "cd ..";
     nv = "nvim";
     jpl = "jupyter lab";
-    envs = "virtualenv venv";
-    enva = "source venv/bin/activate";
-    envd = "deactivate";
+    envc = "bash ~/scripts/devenv_creation.sh";
     tm = "tmux";
     gitig = "bash ~/scripts/git-ignore-template.sh";
   };
