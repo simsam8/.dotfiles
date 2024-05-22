@@ -20,6 +20,8 @@ in
     neofetch
     oh-my-posh
     nodePackages.bash-language-server
+    direnv
+    devenv
   ];
 
   programs.bash = {
@@ -32,4 +34,8 @@ in
     useTheme = "peru";
   };
 
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true;
+  };
 }
