@@ -24,6 +24,7 @@
   
   # Ensure nix flakes are enabled
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.trusted-users = [ "root" "@wheel" ];
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
