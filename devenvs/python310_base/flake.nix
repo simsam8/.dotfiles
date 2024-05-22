@@ -34,6 +34,8 @@
                   packages = with pkgs; [ ];
 
                   languages.python.enable = true;
+                  languages.python.package = pkgs.python310;
+
                   languages.python.venv = {
                     enable = true;
                     quiet = false;
