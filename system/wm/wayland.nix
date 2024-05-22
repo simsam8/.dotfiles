@@ -14,6 +14,7 @@
     waydroid 
     greetd.greetd
     lightdm
+    wl-clipboard
   ];
 
   # Configure xwayland
