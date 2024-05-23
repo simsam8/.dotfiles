@@ -6,6 +6,7 @@ let
 in with lib; {
   home.packages = with pkgs; [
     waybar
+    gopsuinfo
   ];
 
   imports = [ ./wlogout.nix ];
@@ -16,8 +17,22 @@ in with lib; {
       layer = "bottom";
       position = "top";
       modules-center = [ "hyprland/workspaces" ];
-      modules-left = [ "custom/startmenu"  "hyprland/window" "pulseaudio" "cpu" "memory" "disk" ]; # "hyprland/mode" ];
+      modules-left = [ "custom/startmenu"  "hyprland/window" "pulseaudio" "cpu" "memory" "disk" "custom/gputemp" "custom/cputemp" ]; # "hyprland/mode" ];
       modules-right = [ "custom/exit" "idle_inhibitor" "bluetooth" "hyprland/language" "battery" "network" "clock" "tray" ];
+
+      "custom/cputemp" = {
+        exec = "cat /sys/class/hwmon/hwmon3/temp1_input | cut -c -2";
+        format = " CPU: {}󰔄";
+        return-type = "";
+        interval = 5;
+      };
+
+      "custom/gputemp" = {
+        exec = "cat /sys/class/hwmon/hwmon3/temp2_input | cut -c -2";
+        format = " GPU: {}󰔄";
+        return-type = "";
+        interval = 5;
+      };
 
       "hyprland/language" = {
         format = "󰌌 {short}{variant}";
@@ -267,6 +282,21 @@ in with lib; {
         padding: 2px 10px;
         border-radius: 10px;
       }
+      #custom-gputemp {
+        color: #${palette.base0F};
+        background: #${palette.base01};
+        margin: 4px;
+        padding: 2px 10px;
+        border-radius: 10px;
+      }
+      #custom-cputemp {
+        color: #${palette.base0F};
+        background: #${palette.base01};
+        margin: 4px;
+        padding: 2px 10px;
+        border-radius: 10px;
+      }
+
       #clock {
         color: #${palette.base01};
           background: linear-gradient(45deg, #${palette.base0C}, #${palette.base0F}, #${palette.base0B}, #${palette.base08});
