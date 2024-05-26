@@ -7,7 +7,10 @@
     ./fonts.nix
   ];
 
-  # Configure X11
+  services.displayManager = {
+    defaultSession = "none+i3";
+  };
+
   services.xserver = {
     enable = true;
     xkb = {
@@ -15,26 +18,16 @@
       variant = ",dvp,,dvorak";
     };
     excludePackages = [ pkgs.xterm ];
-    # displayManager = {
-    #   lightdm.enable = true;
-    #   sessionCommands = ''
-    #   xset -dpms
-    #   xset s blank
-    #   xset r rate 350 50
-    #   xset s 300
-    #   '';
-    # };
-
-    displayManager = {
-      defaultSession = "none+i3";
-    };
 
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
         dmenu
+        rofi
         i3lock
         i3blocks
+        i3status
+        polybar
       ];
     };
   };

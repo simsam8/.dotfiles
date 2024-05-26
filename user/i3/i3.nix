@@ -19,6 +19,11 @@ in
           outer = 5;
         };
 
+        # keycodebindings = {
+        #   "${modifier}+20" = "exec ${pkgs.alacritty}/bin/alacritty"; # key: t
+        #   "${modifier}+25" = "exec spotify"; # key: p
+        # };
+
         keybindings = {
           # Alacritty terminal
           "${modifier}+t" = "exec ${pkgs.alacritty}/bin/alacritty"; # key: t
@@ -44,7 +49,7 @@ in
           "${modifier}+z" = "split h";
           "${modifier}+x" = "split v";
           "${modifier}+r" = "mode resize";
-          "${modifier}+q" = "kill";
+          # "${modifier}+q" = "kill";
 
           "${modifier}+1" = "workspace number $ws1";
           "${modifier}+2" = "workspace number $ws2";
@@ -103,7 +108,7 @@ in
         set $ws10 "10"
 
         bar {
-          status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
+          status_command i3blocks
         }
       '';
     };
