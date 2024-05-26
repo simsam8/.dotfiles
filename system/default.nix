@@ -77,6 +77,7 @@
     lua-language-server
     nil
     xf86_input_wacom # wacom tablet
+    htop
   ];
 
 
