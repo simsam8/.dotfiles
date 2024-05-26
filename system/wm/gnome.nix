@@ -11,10 +11,8 @@
   # Configure X11
   services.xserver = {
     enable = true;
-    xkb = {
-      layout = "us, us, no, no";
-      variant = ",dvp,,dvorak";
-    };
+    xkb.layout = "us";
+    xkb.variant = "dvp";
     excludePackages = [ pkgs.xterm ];
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
