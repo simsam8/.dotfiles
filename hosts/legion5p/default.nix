@@ -14,7 +14,6 @@
   environment.systemPackages = with pkgs; [
     lenovo-legion
     lm_sensors
-    psensor
   ];
 
   boot.extraModulePackages = with config.boot.kernelPackages; [

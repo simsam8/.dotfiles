@@ -15,6 +15,9 @@
       # ../../system/hardware/power.nix
       # (../../system/wm + ("/" + userSettings.wm) + ".nix") # Window manager
     ];
+
+  environment.systemPackages = with pkgs; [
+  ];
   
   # Ensure nix flakes are enabled
   # nix.settings.experimental-features = [ "nix-command" "flakes" ];
