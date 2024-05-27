@@ -15,7 +15,8 @@ in
       monitor = [
         "desc:BOE 0x0A1F,preferred,auto,1.25"
         "desc:AOC Q32G1WG4 0x000025FB,2560x1440@74.97,auto,1"
-        ",preferred,auto,1"
+        ",preferred,auto,1,mirror,eDP-1"
+        # ",preferred,auto,1"
       ];
 
       exec-once = [
