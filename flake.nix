@@ -39,7 +39,8 @@
       email = "simvedaa@gmail.com";
       dotfilesDir = "~/.dotfiles";
       theme = "nord";
-      wm = "hyprland"; 
+      # wm = "hyprland"; 
+      wm = "i3";
       wmType = if (wm == "hyprland") then "wayland" else "x11";
       browser = "vivaldi"; # Default browser
       term = "alacritty"; # Default terminal command
