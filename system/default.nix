@@ -18,7 +18,7 @@
   users.users.${userSettings.username} = {
     isNormalUser = true;
     description = userSettings.name;
-    extraGroups = [ "networkmanager" "wheel" "input" "dialout" ];
+    extraGroups = [ "networkmanager" "wheel" "input" "dialout" "video" ];
     packages = [ pkgs.vivaldi ];
   };
   
@@ -79,6 +79,8 @@
     xf86_input_wacom # wacom tablet
     htop
     psensor
+    bc
+    gawk
   ];
 
 
