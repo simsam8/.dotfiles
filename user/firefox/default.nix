@@ -16,6 +16,7 @@
         darkreader
         theme-nord-polar-night
         sidebery
+        ublock-origin
       ];
       settings = {
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
@@ -25,6 +26,7 @@
         "gfx.webrender.enabled" = true;
         "svg.context-properties.content.enabled" = true;
         "layout.css.backdrop-filter.enabled" = true;
+        "extensions.autoDisableScopes" = 0;
       };
     };
   };
