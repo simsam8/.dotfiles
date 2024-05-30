@@ -7,7 +7,11 @@
     spotify
     obsidian
     obs-studio
-    webcord-vencord
+    # webcord-vencord
+    (pkgs.discord.override {
+      withOpenASAR = true;
+      withVencord = true;
+     })
     libreoffice-qt
   ];
 }
