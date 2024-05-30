@@ -1,6 +1,7 @@
-{ pkgs, lib, userSettings, systemSettings, ... }:
+{ pkgs, config, lib, userSettings, systemSettings, ... }:
 let
   modifier = "Mod4";
+  palette = config.colorScheme.colors;
 in
 {
   xsession = {
@@ -26,12 +27,12 @@ in
 
         keybindings = {
           # Alacritty terminal
-          "${modifier}+t" = "exec ${pkgs.alacritty}/bin/alacritty"; # key: t
+          "${modifier}+t" = "exec --no-startup-id ${pkgs.alacritty}/bin/alacritty"; # key: t
           
           # Dmenu
-          "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -show drun";
+          "${modifier}+d" = "exec --no-startup-id ${pkgs.rofi}/bin/rofi -show drun";
 
-           # Movement
+           # Move between containers
           "${modifier}+j" = "focus down";
           "${modifier}+k"= "focus up";
           "${modifier}+h" = "focus left";
@@ -42,6 +43,17 @@ in
           "${modifier}+Left" = "focus left";
           "${modifier}+Right" = "focus right";
 
+          # Move containers
+          "${modifier}+Shift+j" = "move down";
+          "${modifier}+Shift+k"= "move up";
+          "${modifier}+Shift+h" = "move left";
+          "${modifier}+Shift+l" = "move right";
+
+          "${modifier}+Shift+Down" = "move down";
+          "${modifier}+Shift+Up"= "move up";
+          "${modifier}+Shift+Left" = "move left";
+          "${modifier}+Shift+Right" = "move right";
+
 
            # Misc
           "${modifier}+shift+q" = "kill";
@@ -49,8 +61,9 @@ in
           "${modifier}+z" = "split h";
           "${modifier}+x" = "split v";
           "${modifier}+r" = "mode resize";
-          # "${modifier}+q" = "kill";
+          "${modifier}+q" = "kill";
 
+          # Move to workspaces
           "${modifier}+1" = "workspace number $ws1";
           "${modifier}+2" = "workspace number $ws2";
           "${modifier}+3" = "workspace number $ws3";
@@ -61,6 +74,17 @@ in
           "${modifier}+8" = "workspace number $ws8";
           "${modifier}+9" = "workspace number $ws9";
           "${modifier}+0" = "workspace number $ws10";
+
+          # Move workspaces between monitors
+          "${modifier}+Control+Shift+j" = "move workspace to output down";
+          "${modifier}+Control+Shift+k"= "move workspace to output up";
+          "${modifier}+Control+Shift+h" = "move workspace to output left";
+          "${modifier}+Control+Shift+l" = "move workspace to output right";
+
+          "${modifier}+Control+Shift+Down" = "move workspace to output down";
+          "${modifier}+Control+Shift+Up"= "move workspace to output up";
+          "${modifier}+Control+Shift+Left" = "move workspace to output left";
+          "${modifier}+Control+Shift+Right" = "move workspace to output right";
 
           # move focused container to workspace
           "${modifier}+Shift+1" = "move container to workspace number $ws1";
@@ -76,6 +100,21 @@ in
 
           "${modifier}+Shift+r" = "restart";
 
+          # media controls
+          "XF86AudioPlay" = "exec playerctl play-pause";
+          "XF86AudioPrev" = "exec playerctl previous";
+          "XF86AudioNext" = "exec playerctl next";
+
+          # Audio
+          "XF86AudioMute" = "exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          "XF86AudioMicMute" = "exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+          "XF86AudioRaiseVolume" = "exec wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 5%+";
+          "XF86AudioLowerVolume" = "exec wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 5%-";
+
+          # Screen brightness
+          "XF86MonBrightnessDown" = "exec brightnessctl set 5%-";
+          "XF86MonBrightnessUp" = "exec brightnessctl set +5%";
+
           # "${modifier}+y" = "exec --no-startup-id setxkbmap -layout us,us,no,no -variant ,dvp,,dvorak -option 'grp:alt_space_toggle'";
 
 
@@ -84,18 +123,19 @@ in
         };
 
         startup = [
-          { command = "setxkbmap -layout us,us,no,no"; always = false; }
-          { command = "setxkbmap -variant ,dvp,,dvorak"; always = false; }
-          { command = "setxkbmap -option 'grp:alt_space_toggle'"; always = false; }
-          # { command = "killall -q polybar"; }
-          # { command = "--no-startup-id polybar"; always = true; }
+          { command = "--no-startup-id setxkbmap -layout us,us,no,no"; always = false; }
+          { command = "--no-startup-id setxkbmap -variant ,dvp,,dvorak"; always = false; }
+          { command = "--no-startup-id setxkbmap -option 'grp:alt_space_toggle'"; always = false; }
+          { command = "--no-startup-id xrandr --output HDMI-0 --right-of eDP-1-1";}
+          { command = "--no-startup-id ~/.config/polybar/scripts/launch.sh"; always = true; }
+          { command = "--no-startup-id xinput map-to-output 29 eDP-1-1"; always = true; } # map wacom stylus to laptop screen
+          { command = "--no-startup-id feh --bg-fill --randomize ~/.dotfiles/user/backgrounds/*"; always = true;}
+          { command = "--no-startup-id picom -b"; always = true;}
         ];
 
       };
 
       extraConfig = ''
-        # exec --no-startup-id setxkbmap -layout us,us,no,no -variant ,dvp,,dvorak -option 'grp:alt_space_toggle'
-
         set $ws1 "1"
         set $ws2 "2"
         set $ws3 "3"
@@ -107,9 +147,23 @@ in
         set $ws9 "9"
         set $ws10 "10"
 
-        bar {
-          status_command i3blocks
-        }
+        # default_border pixel 1
+        # default_floating_border pixel 1
+        for_window [class="^.*"] border pixel 2
+
+        ##START THEMING WM
+
+        # Window color settings
+        # class                 border  backgr. text    indicator
+        client.focused          #${palette.base0D} #${palette.base0D} #${palette.base06} #${palette.base0D}
+        client.unfocused        #${palette.base02} #${palette.base00} #${palette.base04} #${palette.base00}
+        client.focused_inactive #${palette.base02} #${palette.base00} #${palette.base04} #${palette.base00}
+        client.placeholder      #${palette.base02} #${palette.base00} #${palette.base04} #${palette.base00}
+        client.urgent           #${palette.base08} #${palette.base08} #${palette.base06} #${palette.base08}
+
+        client.background       #${palette.base00}
+
+        ##STOP THEMING WM
       '';
     };
   };

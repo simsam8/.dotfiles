@@ -1,9 +1,23 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 
 {
- imports = [
-  ./i3.nix
-  ./i3blocks
-  # ./polybar.nix
- ];
+  home.packages = with pkgs; [
+    dunst
+    pavucontrol
+    brightnessctl
+    networkmanager_dmenu
+    playerctl
+    ffcast
+    slop
+    xclip
+    feh
+    libnotify
+  ];
+
+  imports = [
+    ./i3.nix
+    ./picom.nix
+    ./polybar
+    ./rofi
+  ];
 }
