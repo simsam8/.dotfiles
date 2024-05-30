@@ -42,7 +42,7 @@
       # wm = "hyprland"; 
       wm = "i3";
       wmType = if (wm == "hyprland") then "wayland" else "x11";
-      browser = "vivaldi"; # Default browser
+      browser = "firefox"; # Default browser
       term = "alacritty"; # Default terminal command
       font = "RobotoMono"; # Selected font
       fontPkg = pkgs.roboto-mono; # Font package
