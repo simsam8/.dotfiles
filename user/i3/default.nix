@@ -19,5 +19,6 @@
     ./picom.nix
     ./polybar
     ./rofi
+    ./networkmanager_dmenu.nix
   ];
 }

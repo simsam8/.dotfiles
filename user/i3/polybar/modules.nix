@@ -202,7 +202,7 @@
     "module/network-wireless" = {
       "inherit" = "module/network-base";
       interface-type = "wireless";
-      format-connected = "<ramp-signal><label-connected>";
+      format-connected = "%{A1:networkmanager_dmenu:}<ramp-signal><label-connected> %{A}";
       label-connected = "%essid%";
       # label-disconnected = "󰤮 ";
 
@@ -237,8 +237,8 @@
       ramp-0-foreground = "\${colors.nord8}";
       ramp-1-foreground = "\${colors.nord8}";
       ramp-2-foreground = "\${colors.success}";
-      ramp-3-foreground = "\${colors.success}";
-      ramp-4-foreground = "\${colors.warning}";
+      ramp-3-foreground = "\${colors.warning}";
+      ramp-4-foreground = "\${colors.urgent}";
 
 
       interval = 5;
