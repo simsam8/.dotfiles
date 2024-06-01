@@ -5,9 +5,13 @@ let
     ".." = "cd ..";
     nv = "nvim";
     jpl = "jupyter lab";
-    envc = "bash ~/scripts/devenv_creation.sh";
+    nsc = "bash ~/scripts/devenv_creation.sh";
+    nsa = "nix-shell shell.nix";
     tm = "tmux";
     gitig = "bash ~/scripts/git-ignore-template.sh";
+    envc = "virtualenv venv";
+    enva = "source venv/bin/activate";
+    envd = "deactivate";
   };
 in
 {

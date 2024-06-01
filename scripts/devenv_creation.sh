@@ -8,5 +8,4 @@ fi
 
 echo "$selected"
 
-cp "$selected/." ./ -a
-direnv allow
+cp "$selected/shell.nix" ./
