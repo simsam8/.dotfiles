@@ -27,10 +27,9 @@ in
     shellAliases = myAliases;
   };
 
-  programs.oh-my-posh = {
-    enable = true;
-    useTheme = "peru";
-  };
+  imports = [
+    ./oh-my-posh.nix
+  ];
 
   programs.direnv = {
     enable = true;
