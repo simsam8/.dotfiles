@@ -12,6 +12,7 @@
     xclip
     feh
     libnotify
+    xorg.xev
   ];
 
   imports = [
