@@ -99,17 +99,26 @@
       label-empty = "Desktop";
     };
     
-    # "module/filesystem" = {
-    #   type = "internal/fs";
-    #   interval = 25;
-    #
-    #   mount-0 = "/";
-    #
-    #   label-mounted = "%{F#F0C674}%mountpoint%%{F-} %percentage_used%%";
-    #
-    #   label-unmounted = "%mountpoint% not mounted";
-    #   # label-unmounted-foreground = ${colors.disabled}
-    # };
+    "module/filesystem" = {
+      type = "internal/fs";
+      interval = 30;
+
+      mount-0 = "/";
+
+      format-mounted = "<ramp-capacity><label-mounted>";
+      label-mounted = " %free%/%total%";
+
+      ramp-capacity-0 = "";
+      ramp-capacity-0-foreground = "\${colors.urgent}";
+      ramp-capacity-1 = "";
+      ramp-capacity-1-foreground = "\${colors.warning}";
+      ramp-capacity-2 = "";
+      ramp-capacity-2-foreground = "\${colors.success}";
+      ramp-capacity-3 = "";
+      ramp-capacity-3-foreground = "\${colors.nord7}";
+      ramp-capacity-4 = "";
+      ramp-capacity-4-foreground = "\${colors.nord7}";
+    };
 
     "module/pulseaudio" = {
       type = "internal/pulseaudio";

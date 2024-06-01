@@ -48,7 +48,7 @@
       module-margin = 1;
 
       modules-right = "gpu-temp temperature-cpu gpu-memory memory gpu cpu network-wired network-wireless";
-      modules-left = "systray keyboard";
+      modules-left = "systray keyboard filesystem";
     };
   };
 }
