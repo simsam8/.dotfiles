@@ -1,5 +1,5 @@
 
-{pkgs, ...}:
+{pkgs, userSettings, ...}:
 
 {
   home.packages = with pkgs; [ 
@@ -7,11 +7,11 @@
     spotify
     obsidian
     obs-studio
-    # webcord-vencord
+    (if userSettings.wm == "hyprland" then webcord-vencord else 
     (pkgs.discord.override {
       withOpenASAR = true;
       withVencord = true;
-     })
+     }))
     libreoffice-qt
   ];
 }
