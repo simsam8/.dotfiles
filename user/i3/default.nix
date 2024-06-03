@@ -13,6 +13,7 @@
     feh
     libnotify
     xorg.xev
+    xautolock
   ];
 
   imports = [
@@ -20,6 +21,5 @@
     ./picom.nix
     ./polybar
     ./rofi
-    ./networkmanager_dmenu.nix
   ];
 }

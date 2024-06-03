@@ -33,6 +33,7 @@ in
           { command = "--no-startup-id xinput set-prop SYNA2BA6:00 06CB:CE78 Touchpad libinput Natural Scrolling Enabled 1"; always = true; }
           { command = "--no-startup-id feh --bg-fill --randomize ~/.dotfiles/user/backgrounds/*"; always = true;}
           { command = "--no-startup-id picom -b"; always = true;}
+          { command = "--no-startup-id xautolock -detectsleep -time 5 -locker ~/.dotfiles/user/i3/i3lock.sh"; always = false; } # lock screen after 5 min
         ];
 
       };
