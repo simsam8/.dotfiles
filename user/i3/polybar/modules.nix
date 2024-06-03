@@ -316,40 +316,9 @@
       label-foreground = "\${colors.foreground}";
     };
 
-    # "module/powermenu" = {
-    #   type = "custom/menu";
-    #   expand-right = true;
-    #   format-spacing = 2;
-    #   format-padding = 2;
-    #   format-underline = "\${colors.urgent}";
-    #   label-open = "󰐥";
-    #   label-underline = "\${colors.urgent}";
-    #
-    #   label-open-foreground = "\${colors.urgent}";
-    #   label-close = "";
-    #   label-close-foreground = "\${colors.warning}";
-    #   label-separator = "|";
-    #   label-separator-foreground = "\${colors.success}";
-    #
-    #   menu-0-0 = "󰑓";
-    #   menu-0-0-foreground = "\${colors.success}";
-    #   menu-0-0-exec = "reboot";
-    #
-    #   # logout
-    #   menu-0-1 = "󰍃";
-    #   menu-0-1-foreground = "\${colors.warning}";
-    #   menu-0-1-exec = "i3-msg exit";
-    #
-    #   menu-0-2 = "󰐥";
-    #   menu-0-2-foreground = "\${colors.urgent}";
-    #   menu-0-2-exec = "shutdown";
-    #
-    # };
-
     "module/powermenu" = {
       type = "custom/text";
-      click-left = "rofi -show power-menu -modi power-menu:rofi-power-menu";
-      # format-spacing = 1;
+      click-left = "~/.dotfiles/user/i3/rofi/powermenu.sh";
       format-padding = 2;
       format-underline = "\${colors.urgent}";
       label = "󰐥  ";

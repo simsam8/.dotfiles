@@ -7,6 +7,11 @@
     rofi-screenshot
     rofimoji
   ];
+
+  imports = [
+    ./networkmanager_dmenu.nix
+  ];
+
   programs.rofi = {
     enable = true;
     plugins = with pkgs; [

@@ -13,6 +13,7 @@
     feh
     libnotify
     xorg.xev
+    i3lock-color
     xautolock
   ];
 
