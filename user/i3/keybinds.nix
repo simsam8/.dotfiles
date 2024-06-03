@@ -37,12 +37,14 @@ in
     "Group1+${modifier}+z" = "split h";
     "Group1+${modifier}+x" = "split v";
     "Group1+${modifier}+r" = "mode resize";
+    "Group1+${modifier}+b" = "exec ~/.dotfiles/user/i3/i3lock-color.sh";
 
     "Group2+${modifier}+shift+q" = "kill";
     "Group2+${modifier}+f" = "fullscreen toggle";
     "Group2+${modifier}+z" = "split h";
     "Group2+${modifier}+x" = "split v";
     "Group2+${modifier}+r" = "mode resize";
+    "Group2+${modifier}+b" = "exec ~/.dotfiles/user/i3/i3lock-color.sh";
 
     # Move workspaces between monitors
     "Group1+${modifier}+Control+Shift+j" = "move workspace to output down";
