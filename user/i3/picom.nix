@@ -4,7 +4,7 @@
   services.picom = {
     enable = true;
     backend = "glx";
-    shadow = true;
+    shadow = false;
     activeOpacity = 1.0;
     inactiveOpacity = 1.0;
     fade = true;
