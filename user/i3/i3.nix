@@ -24,9 +24,9 @@ in
         };
 
         startup = [
-          { command = "--no-startup-id setxkbmap -layout us,us,no,no"; always = false; }
-          { command = "--no-startup-id setxkbmap -variant ,dvp,,dvorak"; always = false; }
-          { command = "--no-startup-id setxkbmap -option 'grp:alt_space_toggle'"; always = false; }
+          { command = "--no-startup-id setxkbmap -layout us,us,no,no"; always = true; }
+          { command = "--no-startup-id setxkbmap -variant ,dvp,,dvorak"; always = true; }
+          { command = "--no-startup-id setxkbmap -option grp:alt_space_toggle"; always = true; }
           { command = "--no-startup-id xrandr --output HDMI-0 --right-of eDP-1-1";}
           { command = "--no-startup-id ~/.config/polybar/scripts/launch.sh"; always = true; }
           { command = "--no-startup-id xinput map-to-output 29 eDP-1-1"; always = true; } # map wacom stylus to laptop screen
