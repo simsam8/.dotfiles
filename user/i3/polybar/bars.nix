@@ -38,7 +38,7 @@
 
       modules-left = "xwindow";
       modules-center = "i3";
-      modules-right = "dunst pulseaudio bluetooth battery date powermenu";
+      modules-right = "inhibit-ipc dunst pulseaudio bluetooth battery date powermenu";
     };
 
     "bar/bottom" = {

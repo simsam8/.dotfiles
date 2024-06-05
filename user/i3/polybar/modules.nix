@@ -340,9 +340,23 @@
     "module/dunst" = {
       type = "custom/ipc";
       initial = 1;
+      format-padding = 2;
       format-foreground = "\${colors.notify}";
+      format-underline = "\${colors.notify}";
       hook-0 = "echo \"%{A1:dunstctl set-paused true && polybar-msg hook dunst 2:}%{A}\" &";
       hook-1 = "echo \"%{A1:dunstctl set-paused false && polybar-msg hook dunst 1:}%{A}\" &";
+    };
+
+    "module/inhibit-ipc" = {
+      type = "custom/ipc";
+      hook-0 = "echo 󰈈";
+      hook-1 = "echo 󰈉";
+      format-foreground = "\${colors.notify}";
+      format-underline = "\${colors.notify}";
+      format-padding = 2;
+      click-left = "xautolock -enable && xset +dpms && polybar-msg action inhibit-ipc hook 0";
+      click-right = "xautolock -disable && xset -dpms && polybar-msg action inhibit-ipc hook 1";
+      initial = 1;
     };
   };
 }
