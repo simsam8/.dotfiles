@@ -1,5 +1,7 @@
-{ userSettings, ... }:
-
+{ userSettings, systemSettings, ... }:
+let 
+  host = systemSettings.hostname;
+in
 {
   services.polybar.settings = {
 
@@ -47,7 +49,7 @@
 
       module-margin = 1;
 
-      modules-right = "gpu-temp temperature-cpu gpu-memory memory gpu cpu network-wired network-wireless";
+      modules-right = if (host == "t480s") then "temperature-cpu memory cpu network-wired network-wireless" else "gpu-temp temperature-cpu gpu-memory memory gpu cpu network-wired network-wireless";
       modules-left = "systray keyboard filesystem";
     };
   };
