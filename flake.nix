@@ -4,12 +4,12 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "nixpkgs/nixos-23.11";
+    nixpkgs-stable.url = "nixpkgs/nixos-24.05";
 
     home-manager-unstable.url = "github:nix-community/home-manager/master"; 
     home-manager-unstable.inputs.nixpkgs.follows = "nixpkgs";
 
-    home-manager-stable.url = "github:nix-community/home-manager/release-23.11";
+    home-manager-stable.url = "github:nix-community/home-manager/release-24.05";
     home-manager-stable.inputs.nixpkgs.follows = "nixpkgs-stable";
 
     nix-colors.url = "github:misterio77/nix-colors";
@@ -24,7 +24,7 @@
   let
     systemSettings = {
       system = "x86_64-linux"; #system architecture
-      hostname = "t480s"; # hostname
+      hostname = "legion5p"; # hostname
       profile = "personal"; # select a profile from my profiles dir (not implemented)
       timezone = "Europe/Oslo"; # select timezone
       locale = "en_US.UTF-8"; # select locale
