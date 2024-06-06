@@ -16,6 +16,7 @@
     xkb = {
       layout = "us, us, no, no";
       variant = ",dvp,,dvorak";
+      options = "grp:alt_space_toggle";
     };
     excludePackages = [ pkgs.xterm ];
     desktopManager = {
