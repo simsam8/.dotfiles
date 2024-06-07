@@ -43,5 +43,6 @@
 
   services.libinput = {
     touchpad.disableWhileTyping = true;
+    touchpad.naturalScrolling = false;
   };
 }

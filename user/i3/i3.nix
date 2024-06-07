@@ -30,7 +30,7 @@ in
           { command = "--no-startup-id xrandr --output HDMI-0 --right-of eDP-1-1";}
           { command = "--no-startup-id ~/.config/polybar/scripts/launch.sh"; always = true; }
           { command = "--no-startup-id xinput map-to-output 29 eDP-1-1"; always = true; } # map wacom stylus to laptop screen
-          { command = "--no-startup-id xinput set-prop SYNA2BA6:00 06CB:CE78 Touchpad libinput Natural Scrolling Enabled 1"; always = true; }
+          { command = "--no-startup-id xinput set-prop SYNA2BA6:00 06CB:CE78 Touchpad libinput Natural Scrolling Enabled 0"; always = true; }
           { command = "--no-startup-id feh --bg-fill --randomize ~/.dotfiles/user/backgrounds/*"; always = true;}
           { command = "--no-startup-id picom -b"; always = true;}
           { command = "--no-startup-id xautolock -time 5 -locker ~/.dotfiles/user/i3/i3lock.sh"; always = false; } # lock screen after 5 min
