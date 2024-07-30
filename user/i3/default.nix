@@ -20,4 +20,9 @@
   ./dunst.nix
   ];
 
+  home.file.".config/i3/scripts" = {
+    source = ./scripts;
+    recursive = true;
+  };
+
 }

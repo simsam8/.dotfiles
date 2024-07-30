@@ -16,6 +16,11 @@
     ./networkmanager_dmenu.nix
   ];
 
+  home.file.".config/rofi/scripts/" = {
+    source = ./scripts;
+    recursive = true;
+  };
+
   programs.rofi = {
     enable = true;
     plugins = with pkgs; [

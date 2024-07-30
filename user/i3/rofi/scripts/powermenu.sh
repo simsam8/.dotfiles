@@ -19,7 +19,7 @@ $shutdown" | rofi -dmenu\
 # Do something based on selected option
 if [ "$selected_option" == "$lock" ]
 then
-    ~/.dotfiles/i3/i3lock.sh
+    ~/.config/i3/scripts/i3lock.sh
 elif [ "$selected_option" == "$logout" ]
 then
     i3-msg exit
@@ -35,8 +35,8 @@ then
 #     # amixer set Master mute
 #     # doas systemctl suspend
       playerctl pause
-      systemctl suspend
-#     ~/.dotfiles/user/i3/i3lock-color.sh && systemctl suspend
+      # systemctl suspend
+      ~/.config/i3/scripts/i3lock.sh && systemctl suspend
 else
     echo "No match"
 fi

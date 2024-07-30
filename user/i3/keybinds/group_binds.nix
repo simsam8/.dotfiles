@@ -7,8 +7,8 @@ let
 # start rofi
   bindsym ${group}+$mod+d exec --no-startup-id rofi -show drun
   bindsym ${group}+$mod+c exec --no-startup-id rofi -show calc
-  bindsym ${group}+$mod+g exec ~/.dotfiles/i3/rofi/rofi-screenshot.sh
-  bindsym ${group}+$mod+Shift+g exec ~/.dotfiles/i3/rofi/rofi-screenshot.sh -s
+  bindsym ${group}+$mod+g exec --no-startup-id ~/.config/rofi/scripts/rofi-screenshot.sh
+  bindsym ${group}+$mod+Shift+g exec --no-startup-id ~/.config/rofi/scripts/rofi-screenshot.sh -s
 
 # change focus
   bindsym ${group}+$mod+h focus left
@@ -30,7 +30,7 @@ let
 
 
 # powermenu
-  bindsym ${group}+$mod+Shift+p exec --no-startup-id ~/.dotfiles/i3/rofi/powermenu.sh
+  bindsym ${group}+$mod+Shift+p exec --no-startup-id ~/.config/rofi/scripts/powermenu.sh
 
 # kill window
   bindsym ${group}+$mod+Shift+q kill
