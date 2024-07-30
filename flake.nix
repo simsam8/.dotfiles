@@ -25,7 +25,8 @@
     systemSettings = {
       system = "x86_64-linux"; #system architecture
       hostname = "legion5p"; # hostname
-      profile = "personal"; # select a profile from my profiles dir (not implemented)
+      profile = "personal"; # select a profile from my profiles dir
+      nvidia = true;
       timezone = "Europe/Oslo"; # select timezone
       locale = "en_US.UTF-8"; # select locale
       bootMode = "uefi"; # uefi or bios
@@ -93,18 +94,19 @@
       };
       
       legion5p = lib.nixosSystem {
-       system = systemSettings.system;
-       specialArgs = {
-          inherit inputs;
-          inherit pkgs-stable;
-          inherit systemSettings;
-          inherit userSettings;
-         };
-        modules = [ 
-          ./hosts/legion5p
-        ];
-       };
+        system = systemSettings.system;
+        specialArgs = {
+           inherit inputs;
+           inherit pkgs-stable;
+           inherit systemSettings;
+           inherit userSettings;
+          };
+          modules = [ 
+            ./hosts/legion5p
+          ];
+        };
     };
+
     homeConfigurations = {
       user = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
@@ -114,7 +116,7 @@
           inherit systemSettings;
           inherit userSettings;
         };
-        modules = [ ./home.nix ];
+        modules = [ ./profiles/${systemSettings.profile}/home.nix ];
       };
     };
   };
