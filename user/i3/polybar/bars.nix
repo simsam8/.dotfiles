@@ -1,6 +1,6 @@
 { userSettings, systemSettings, ... }:
 let 
-  host = systemSettings.hostname;
+  nvidia = systemSettings.nvidia;
 in
 {
   services.polybar.settings = {
@@ -9,17 +9,17 @@ in
       theme = "dark";
       monitor = "\${env:MONITOR:}";
       width = "100%";
-      height = "3%";
+      height = "2.5%";
       offset-x = 0;
       offset-y = 0;
       radius = 0.0;
       fixed-center = true;
 
 
-      background = "\${colors.background-alt2}";
-      foreground = "\${colors.foreground}";
+      background = "\${colors.bg-alt}";
+      foreground = "\${colors.fg}";
 
-      line-size = "3pt";
+      line-size = "2pt";
 
       padding = 0;
       override-redirect = false;
@@ -38,9 +38,11 @@ in
 
       module-margin = 1;
 
-      modules-left = "xwindow";
+      # modules-left = "xwindow";
+      # modules-left = "i3";
       modules-center = "i3";
-      modules-right = "inhibit-ipc dunst pulseaudio bluetooth battery date powermenu";
+      # modules-right = "inhibit-ipc dunst pulseaudio bluetooth battery date powermenu";
+      modules-right = "brightnessctl pulseaudio bluetooth network-wired network-wireless battery date";
     };
 
     "bar/bottom" = {
@@ -49,8 +51,10 @@ in
 
       module-margin = 1;
 
-      modules-right = if (host == "t480s") then "temperature-cpu memory cpu network-wired network-wireless" else "gpu-temp temperature-cpu gpu-memory memory gpu cpu network-wired network-wireless";
-      modules-left = "systray keyboard filesystem";
+      modules-left = if !nvidia then "systray keyboard filesystem temperature-cpu" else "systray keyboard filesystem gpu-temp temperature-cpu" ;
+      # modules-center = "spotify-prev spotify-play-pause spotify-next spotify";
+      modules-center = "spotify";
+      modules-right = if !nvidia then "memory cpu" else "gpu-memory memory gpu cpu";
     };
   };
 }

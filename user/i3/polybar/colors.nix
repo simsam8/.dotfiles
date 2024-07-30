@@ -4,20 +4,23 @@ let
 in
 {
   services.polybar.settings."colors" = with palette; {
-    background = base00;
-    background-alt = base01;
-    background-alt2 = base02;
-    buffer = base03;
-    foreground = base04;
-    nord6 = base06;
-    nord7 = base07; 
-    nord8 = base0C; 
-    nord9 = base0D;
-    urgent = base08;
-    warning = base09;
-    notify = base0A;
-    success = base0B; # green
-    function = base0E;
-  };
+    bg = base00; 
+    bg-alt = base01;
+    fg = base06;
+    fg-alt = base05;
 
+    blue = base0D;
+    cyan = base0C;
+    green = base0B;
+    orange = base09;
+    purple = base0E;
+    red = base08;
+    yellow = base0A;
+
+    black = "#000";
+    white = "#FFF";
+
+    trans = "#00000000";
+    semi-trans-black = "#aa000000";
+  };
 }

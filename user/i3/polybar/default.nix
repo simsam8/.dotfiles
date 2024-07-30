@@ -9,16 +9,6 @@ in
     ./bars.nix
   ];
 
-  # home.file.".config/polybar/launch.sh" = {
-  #   source = ./launch.sh;
-  #   force = true;
-  # };
-  #
-  # home.file.".config/polybar/brightnessctl.sh" = {
-  #   source = ./brightnessctl.sh;
-  #   force = true;
-  # };
-
   home.file.".config/polybar/scripts" = {
     source = ./scripts;
     force = true;

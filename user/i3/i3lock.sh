@@ -13,7 +13,8 @@ blue='#5E81AC'
 cyan='#88C0D0'
 green='#A3BE8C'
 
-i3lock-color \
+# i3lock-color \
+i3lock \
   --insidever-color=$selection$alpha \
   --insidewrong-color=$selection$alpha \
   --inside-color=$selection$alpha \

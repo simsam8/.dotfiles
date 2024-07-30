@@ -5,11 +5,12 @@ lock=" Lock"
 logout=" Logout"
 shutdown=" Power off"
 reboot=" Reboot"
-# sleep=" Sleep"
+sleep=" Sleep"
  
 # Get answer from user via rofi
 selected_option=$(echo "$lock
 $logout
+$sleep
 $reboot
 $shutdown" | rofi -dmenu\
                   -i\
@@ -18,25 +19,23 @@ $shutdown" | rofi -dmenu\
 # Do something based on selected option
 if [ "$selected_option" == "$lock" ]
 then
-    # betterlockscreen --lock
-    ~/.dotfiles/user/i3/i3lock.sh
+    ~/.dotfiles/i3/i3lock.sh
 elif [ "$selected_option" == "$logout" ]
 then
-  # loginctl terminate-user "$(whoami)"
     i3-msg exit
 elif [ "$selected_option" == "$shutdown" ]
 then
     # mpv ~/Music/alaram/shutdown.mp3 &
-    # doas systemctl poweroff
     systemctl poweroff
 elif [ "$selected_option" == "$reboot" ]
 then
-    # doas systemctl reboot
     systemctl reboot
-# elif [ "$selected_option" == "$sleep" ]
-# then
+elif [ "$selected_option" == "$sleep" ]
+then
 #     # amixer set Master mute
 #     # doas systemctl suspend
+      playerctl pause
+      systemctl suspend
 #     ~/.dotfiles/user/i3/i3lock-color.sh && systemctl suspend
 else
     echo "No match"

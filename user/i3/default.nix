@@ -1,26 +1,23 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
-    dunst
-    pavucontrol
-    brightnessctl
     networkmanager_dmenu
-    playerctl
-    ffcast
-    slop
-    xclip
-    feh
+    zscroll
+    ranger
     libnotify
-    xorg.xev
-    i3lock-color
-    xautolock
+    pavucontrol
+    xidlehook
+    # brightnessctl
+    # i3lock-color
   ];
 
   imports = [
-    ./i3.nix
-    ./picom.nix
-    ./polybar
-    ./rofi
+  ./i3.nix
+  ./picom.nix
+  ./polybar
+  ./rofi
+  ./dunst.nix
   ];
+
 }
