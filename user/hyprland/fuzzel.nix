@@ -3,7 +3,7 @@
 {
   programs.fuzzel = {
     enable = true;
-    settings = with config.colorScheme.colors; {
+    settings = with config.colorScheme.palette; {
       main = {
         dpi-aware = "yes";
         font = "${userSettings.font}:weight=bold";

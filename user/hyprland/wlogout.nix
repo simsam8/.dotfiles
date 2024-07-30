@@ -12,7 +12,7 @@
       background-image: image(url("${pkgs.wlogout}/share/wlogout/icons/${name}.png"));
     }
   '';
-  palette = config.colorScheme.colors;
+  palette = config.colorScheme.palette;
 in {
   programs.wlogout = {
     enable = true;

@@ -1,6 +1,6 @@
 { pkgs, config, userSettings, ... }:
 let
-  palette = config.colorScheme.colors;
+  palette = config.colorScheme.palette;
 in
 {
   imports = [

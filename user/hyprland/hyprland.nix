@@ -1,7 +1,7 @@
 {pkgs, inputs, config, userSettings, lib, ...}:
 
 let 
-  palette = config.colorScheme.colors;
+  palette = config.colorScheme.palette;
 
 in
 {

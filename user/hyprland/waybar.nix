@@ -1,7 +1,7 @@
 { pkgs, lib, config, userSettings, ... }:
 
 let
-  palette = config.colorScheme.colors;
+  palette = config.colorScheme.palette;
   betterTransition = "all 0.3s cubic-bezier(.55,-0.68,.48,1.682)";
 in with lib; {
   home.packages = with pkgs; [

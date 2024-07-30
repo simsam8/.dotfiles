@@ -1,6 +1,6 @@
 { config, userSettings, ... }:
 let
-  palette = config.colorScheme.colors;
+  palette = config.colorScheme.palette;
 in
 {
   services.polybar.settings."colors" = with palette; {

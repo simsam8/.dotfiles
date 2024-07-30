@@ -1,6 +1,6 @@
 { config, userSettings, ... }:
 let
-  palette = config.colorScheme.colors;
+  palette = config.colorScheme.palette;
 in
 {
   home.file.".config/hypr/hyprlock.conf".text = ''

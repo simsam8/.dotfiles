@@ -33,7 +33,7 @@
       # size = 16;
       cursor.style = "Underline";
 
-      colors = with config.colorScheme.colors; {
+      colors = with config.colorScheme.palette; {
         bright = {
           black = "0x${base03}";
           blue = "0x${base0D}";

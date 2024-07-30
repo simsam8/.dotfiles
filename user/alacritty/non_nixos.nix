@@ -1,6 +1,6 @@
 { config, ... }:
 
-with config.colorScheme.colors; {
+with config.colorScheme.palette; {
   home.file.".config/alacritty/alacritty.toml".text = ''
     [window]
     padding = { x = 5, y = 5 }

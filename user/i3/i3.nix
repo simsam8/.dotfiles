@@ -1,7 +1,7 @@
 { pkgs, config, lib, userSettings, systemSettings, ... }:
 let
   modifier = "Mod4";
-  palette = config.colorScheme.colors;
+  palette = config.colorScheme.palette;
   keybindsCommon = import ./keybinds/common.nix;
   keybindsG1 = import ./keybinds/group_binds.nix "Group1";
   keybindsG2 = import ./keybinds/group_binds.nix "Group2";
