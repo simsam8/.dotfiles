@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [ alacritty alacritty-theme ];
   programs.alacritty = {
-    enable = true;
+    enable = false;
     settings = {
       window.padding = {
         x = 5;
