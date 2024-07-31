@@ -1,4 +1,4 @@
-{ pkgs, config, lib, userSettings, systemSettings, ... }:
+{ config, ... }:
 let
   modifier = "Mod4";
   palette = config.colorScheme.palette;
@@ -25,7 +25,7 @@ let
   exec --no-startup-id ~/.dotfiles-minimal/i3/idletimer.sh
   exec_always --no-startup-id ~/.config/polybar/scripts/launch.sh
 
-  exec_always --no-startup-id feh --bg-fill --randomize ~/.dotfiles/user/backgrounds/*
+  exec --no-startup-id ~/.fehbg # Set background 
   exec --no-startup-id nm-applet
 
   set $refresh_i3status killall -SIGUSR1 i3status
