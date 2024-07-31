@@ -7,6 +7,7 @@ let
 # start rofi
   bindsym ${group}+$mod+d exec --no-startup-id rofi -show drun
   bindsym ${group}+$mod+c exec --no-startup-id rofi -show calc
+  bindsym ${group}+$mod+b exec --no-startup-id ~/.config/rofi/scripts/background_chooser.sh
   bindsym ${group}+$mod+g exec --no-startup-id ~/.config/rofi/scripts/rofi-screenshot.sh
   bindsym ${group}+$mod+Shift+g exec --no-startup-id ~/.config/rofi/scripts/rofi-screenshot.sh -s
 
