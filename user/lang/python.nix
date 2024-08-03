@@ -1,4 +1,4 @@
-{ config, pkgs, ...}:
+{ pkgs, ...}:
 
 {
   
@@ -10,6 +10,6 @@
     python311Packages.flake8
     python311Packages.black
     python311Packages.isort
-    nodePackages.pyright
+    pyright
   ];
 }
