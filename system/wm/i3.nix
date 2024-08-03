@@ -8,7 +8,7 @@
   ];
 
   services.displayManager = {
-    defaultSession = "xfce+i3";
+    defaultSession = "none+i3";
   };
 
   services.xserver = {
@@ -19,15 +19,6 @@
       options = "grp:alt_space_toggle";
     };
     excludePackages = [ pkgs.xterm ];
-    desktopManager = {
-      xterm.enable = false;
-      xfce = {
-        enable = true;
-        noDesktop = true;
-        enableXfwm = false;
-      };
-    };
-
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
