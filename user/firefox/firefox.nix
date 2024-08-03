@@ -1,12 +1,8 @@
-{ config, pkgs, inputs, systemSettings, userSettings, ... }:
+{ inputs, systemSettings, userSettings, ... }:
 
 {
-  home.packages = with pkgs; [
-    firefox
-  ];
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox;
     profiles.simsam8 = {
       id = 0;
       name = userSettings.username;

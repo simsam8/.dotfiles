@@ -1,9 +1,8 @@
-{ pkgs, lib, config, ... }:
+{ lib, config, ... }:
 
 {
-  home.packages = with pkgs; [ alacritty alacritty-theme ];
   programs.alacritty = {
-    enable = false;
+    enable = true;
     settings = {
       window.padding = {
         x = 5;
