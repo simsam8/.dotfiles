@@ -8,8 +8,13 @@
     libnotify
     pavucontrol
     xidlehook
-    # brightnessctl
-    # i3lock-color
+    dunst
+    brightnessctl
+    playerctl
+    i3lock-color
+    feh
+    xclip
+    picom
   ];
 
   imports = [
