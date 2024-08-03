@@ -22,11 +22,11 @@
 
   imports = [
     inputs.nix-colors.homeManagerModules.default
-    ../../user/sh.nix
+    ../../user/bash
     ../../user/git.nix
-    ../../user/alacritty.nix
-    ../../user/neovim/neovim.nix
-    ../../user/tmux/tmux.nix
+    ../../user/alacritty
+    ../../user/neovim
+    ../../user/tmux
     ../../user/lang/python.nix
     ../../user/thunar.nix
     ../../user/apps.nix
@@ -65,7 +65,7 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    "scripts".source = ./scripts;
+    "scripts".source = ../../scripts;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
