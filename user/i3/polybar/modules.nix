@@ -91,6 +91,7 @@
     "module/filesystem" = {
       type = "internal/fs";
       interval = 30;
+      fixed-values = true;
 
       mount-0 = "/";
 
