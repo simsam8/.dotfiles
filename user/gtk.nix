@@ -1,4 +1,4 @@
-{ pkgs, inputs, config, ... }:
+{ pkgs, config, systemSettings, ... }:
 
 {
   home.packages = with pkgs; [
@@ -12,7 +12,7 @@
     size = 16;
   };
 
-  gtk = {
+  gtk = if systemSettings.profile == "non-nixos" then {} else {
     enable = true;
     iconTheme = {
       name = "Nordzy";
@@ -32,7 +32,7 @@
     };
   };
 
-  dconf.settings = {
+  dconf.settings = if systemSettings.profile == "non-nixos" then {} else {
     "org/gnome/desktop/interface" = {
       gtk-theme = "${config.gtk.theme.name}";
       cursor-theme = "${config.gtk.cursorTheme.name}";
