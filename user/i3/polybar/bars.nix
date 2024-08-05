@@ -48,11 +48,17 @@ in
     "bar/bottom" = {
       "inherit" = "bar/base";
       bottom = true;
-
       module-margin = 1;
+      modules-left = if !nvidia then "keyboard filesystem temperature-cpu" else "keyboard filesystem gpu-temp temperature-cpu" ;
+      modules-center = "spotify";
+      modules-right = if !nvidia then "memory cpu" else "gpu-memory memory gpu cpu";
+    };
 
+    "bar/bottom-primary" = {
+      "inherit" = "bar/base";
+      bottom = true;
+      module-margin = 1;
       modules-left = if !nvidia then "systray keyboard filesystem temperature-cpu" else "systray keyboard filesystem gpu-temp temperature-cpu" ;
-      # modules-center = "spotify-prev spotify-play-pause spotify-next spotify";
       modules-center = "spotify";
       modules-right = if !nvidia then "memory cpu" else "gpu-memory memory gpu cpu";
     };
