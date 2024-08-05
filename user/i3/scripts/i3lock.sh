@@ -13,7 +13,13 @@ blue='#5E81AC'
 cyan='#88C0D0'
 green='#A3BE8C'
 
-i3lock-color \
+if command -v i3lock-color; then
+  lock_cmd=i3lock-color
+else
+  lock_cmd=i3lock
+fi;
+
+$lock_cmd \
   --insidever-color=$selection$alpha \
   --insidewrong-color=$selection$alpha \
   --inside-color=$selection$alpha \
