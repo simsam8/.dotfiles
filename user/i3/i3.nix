@@ -21,8 +21,8 @@ let
 
   exec_always --no-startup-id "setxkbmap -layout us,us,no,no -variant ,dvp,,dvorak -option grp:alt_caps_toggle"
 
-  # exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.dotfiles-minimal/i3/i3lock.sh #--nofork
   exec --no-startup-id ~/.dotfiles-minimal/i3/idletimer.sh
+  exec_always --no-startup-id autorandr --change
   exec_always --no-startup-id ~/.config/polybar/scripts/launch.sh
 
   exec --no-startup-id ~/.fehbg # Set background 
