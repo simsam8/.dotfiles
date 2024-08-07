@@ -15,6 +15,7 @@
     xclip
     picom
     acpi
+    i3-auto-layout
   ]
   ++ (if systemSettings.profile == "non-nixos" then [] else
   [

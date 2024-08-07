@@ -17,6 +17,7 @@ let
 
   exec --no-startup-id dex --autostart --environment i3
   exec_always --no-startup-id picom -b 
+  exec_always --no-startup-id i3-auto-layout
   exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
   exec_always --no-startup-id "setxkbmap -layout us,us,no,no -variant ,dvp,,dvorak -option grp:alt_caps_toggle"
