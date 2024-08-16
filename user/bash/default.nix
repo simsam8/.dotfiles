@@ -9,10 +9,13 @@ let
     nv = "nvim";
     jpl = "jupyter lab";
     tm = "tmux";
+    tms = "~/scripts/tmux-sessionizer";
     gitig = "bash ~/scripts/git-ignore-template.sh";
     envc = "virtualenv venv";
     enva = "source venv/bin/activate";
     envd = "deactivate";
+    # nsc = "bash ~/scripts/devenv_creation.sh";
+    # nsa = "nix-shell shell.nix";
     grep = "grep --color=auto";
     fgrep = "fgrep --color=auto";
     egrep = "egrep --color=auto";
