@@ -1,9 +1,18 @@
 #!/usr/bin/env bash
 
+selectWorkspace () { 
+  # Using find to search folders containing workspaces
+  local myDirs=$(find ~/school/ ~/personal/ ~/work/ -mindepth 1 -maxdepth 1 -type d && \
+    echo ~/.dotfiles/; ) # Add additional workspaces here
+
+  local workspace=$(echo "$myDirs" | fzf)
+  echo "$workspace"
+}
+
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/school/ ~/personal/ ~/work/ -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(selectWorkspace)
 fi
 
 if [[ -z $selected ]]; then
