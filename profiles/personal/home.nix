@@ -33,6 +33,7 @@
     ../../user/gtk.nix
     ../../user/firefox
     ../../user/${userSettings.wm}
+    ../../user/cli-tools.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes."${userSettings.theme}";
