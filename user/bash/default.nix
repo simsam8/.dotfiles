@@ -1,5 +1,6 @@
-{ ... }:
+{ systemSettings, ... }:
 let 
+  profile = systemSettings.profile;
   myAliases = {
     ls = "ls --color=auto";
     ll = "ls -laF --color=auto";
@@ -22,8 +23,10 @@ let
   };
 in
 {
+  home.file.".bash_aliases".source = ./.bash_aliases;
+
   programs.bash = {
-    enable = true;
+    enable = if profile == "non-nixos" then false else true;
     shellAliases = myAliases;
     historySize = 1000;
     historyFileSize = 2000;
@@ -38,7 +41,8 @@ in
   };
 
   programs.oh-my-posh = {
-    enable = true;
+    enable = if profile == "non-nixos" then false else true;
     settings = builtins.fromJSON (builtins.readFile ./peru_nord.json);
   };
+
 }
