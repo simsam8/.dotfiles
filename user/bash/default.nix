@@ -24,6 +24,7 @@ let
 in
 {
   home.file.".bash_aliases".source = ./.bash_aliases;
+  home.file.".bashrc_extension".source = ./.bashrc_extension;
 
   programs.bash = {
     enable = if profile == "non-nixos" then false else true;
