@@ -41,24 +41,24 @@ return {
   },
 
 -- Enable on non-nixos system
-  -- {
-  --   "williamboman/mason.nvim",
-  --   opts = {
-  --     ensure_installed = {
-  --       "lua-language-server",
-  --       "html-lsp",
-  --       "pyright",
-  --       "pylint",
-  --       "flake8",
-  --       "black",
-  --       "djlint",
-  --       "bash-language-server",
-  --       "marksman",
-  --       "clangd",
-  --       "nil",
-  --     }
-  --   }
-  -- },
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "lua-language-server",
+        "html-lsp",
+        "pyright",
+        "pylint",
+        "flake8",
+        "black",
+        "djlint",
+        "bash-language-server",
+        "marksman",
+        "clangd",
+        "nil",
+      }
+    }
+  },
 
   {
       "iamcco/markdown-preview.nvim",
