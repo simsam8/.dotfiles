@@ -27,20 +27,33 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
-        "vim", "lua", "vimdoc",
-        "html", "css", "markdown",
-        "python", "bash", "htmldjango",
-        "css", "json", "c", "cpp"
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+        "markdown",
+        "python",
+        "bash",
+        "htmldjango",
+        "css",
+        "json",
+        "c",
+        "cpp",
+        "csv",
+        "gitignore",
+        "nix",
+        "rust",
       },
     },
   },
 
   {
     "christoomey/vim-tmux-navigator",
-    lazy=false,
+    lazy = false,
   },
 
--- Enable on non-nixos system
+  -- Enable on non-nixos system
   {
     "williamboman/mason.nvim",
     opts = {
@@ -56,15 +69,17 @@ return {
         "marksman",
         "clangd",
         "nil",
-      }
-    }
+      },
+    },
   },
 
   {
-      "iamcco/markdown-preview.nvim",
-      cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-      ft = { "markdown" },
-      build = function() vim.fn["mkdp#util#install"]() end,
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
   },
 
   {
@@ -82,5 +97,4 @@ return {
       },
     },
   },
-
 }
