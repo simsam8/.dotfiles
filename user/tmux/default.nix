@@ -22,6 +22,8 @@
     extraConfig = "
       # set-option -sa terminal-features ',alacritty:RGB' # change alacritty to the terminal you use, check `echo $TERM` outside tmux
       set-option -sa terminal-features ',xterm-256color:RGB' # change alacritty to the terminal you use, check `echo $TERM` outside tmux
+      set-option -g default-shell \"/usr/bin/bash\"
+      set-option -g default-command bash
       bind-key -T copy-mode-vi v send-keys -X begin-selection
       bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
       bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
