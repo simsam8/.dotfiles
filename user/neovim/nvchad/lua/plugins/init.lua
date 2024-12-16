@@ -136,4 +136,8 @@ return {
       require("dap-python").setup(path)
     end,
   },
+  {
+    "David-Kunz/gen.nvim",
+    cmd = "Gen",
+  },
 }
