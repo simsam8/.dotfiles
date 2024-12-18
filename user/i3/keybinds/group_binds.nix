@@ -2,7 +2,7 @@ let
   keybinds = group: ''
 
 # start a terminal
-  bindsym ${group}+$mod+t exec i3-sensible-terminal
+  bindsym ${group}+$mod+t exec --no-startup-id i3-sensible-terminal
 
 # start rofi
   bindsym ${group}+$mod+d exec --no-startup-id rofi -show drun
