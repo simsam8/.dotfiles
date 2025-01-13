@@ -102,7 +102,7 @@ home.file.".config/dunst/dunstrc".text = ''
   # 
   # If this option is set to mouse or keyboard, the monitor option
   # will be ignored.
-  follow = mouse
+  follow = keyboard
   
   # Should a notification popped up from history be sticky or timeout
   # as if it would normally do.

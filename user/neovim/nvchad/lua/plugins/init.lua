@@ -27,38 +27,52 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
-        "vim", "lua", "vimdoc",
-        "html", "css", "markdown",
-        "python", "bash", "htmldjango",
-        "css", "json", "c", "cpp"
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+        "markdown",
+        "python",
+        "bash",
+        "htmldjango",
+        "css",
+        "json",
+        "c",
+        "cpp",
+        "csv",
+        "gitignore",
+        "nix",
+        "rust",
       },
     },
   },
 
   {
     "christoomey/vim-tmux-navigator",
-    lazy=false,
+    lazy = false,
   },
 
--- Enable on non-nixos system
-  -- {
-  --   "williamboman/mason.nvim",
-  --   opts = {
-  --     ensure_installed = {
-  --       "lua-language-server",
-  --       "html-lsp",
-  --       "pyright",
-  --       "pylint",
-  --       "flake8",
-  --       "black",
-  --       "djlint",
-  --       "bash-language-server",
-  --       "marksman",
-  --       "clangd",
-  --       "nil",
-  --     }
-  --   }
-  -- },
+  -- Enable on non-nixos system
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "lua-language-server",
+        "html-lsp",
+        "pyright",
+        "pylint",
+        "flake8",
+        "black",
+        "djlint",
+        "bash-language-server",
+        "marksman",
+        "clangd",
+        "nil",
+        "debugpy",
+      },
+    },
+  },
 
   -- {
   --     "iamcco/markdown-preview.nvim",
@@ -100,4 +114,45 @@ return {
     },
   },
 
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "nvim-neotest/nvim-nio",
+      -- "theHamsta/nvim-dap-virtual-text",
+    },
+    config = function()
+      local dap = require "dap"
+      local dapui = require "dapui"
+      dapui.setup()
+      dap.listeners.before.attach.dapui_config = function()
+        dapui.open()
+      end
+      dap.listeners.before.launch.dapui_config = function()
+        dapui.open()
+      end
+      dap.listeners.before.event_terminated.dapui_config = function()
+        dapui.close()
+      end
+      dap.listeners.before.event_exited.dapui_config = function()
+        dapui.close()
+      end
+    end,
+  },
+  {
+    "mfussenegger/nvim-dap-python",
+    ft = "python",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "rcarriga/nvim-dap-ui",
+    },
+    config = function()
+      local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+      require("dap-python").setup(path)
+    end,
+  },
+  {
+    "David-Kunz/gen.nvim",
+    cmd = "Gen",
+  },
 }
