@@ -4,8 +4,8 @@
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = {
-	theme = "onedark",
+M.base46 = {
+	theme = "nord",
 
   tabufline = {
     order = { "buffers", "tabs", "btns", "treeOffset" },
