@@ -70,6 +70,7 @@ return {
         "clangd",
         "nil",
         "debugpy",
+        "rust-analyzer",
       },
     },
   },
@@ -94,7 +95,9 @@ return {
       end
     end,
     init = function()
-      if vim.fn.executable "npx" then vim.g.mkdp_filetypes = { "markdown" } end
+      if vim.fn.executable "npx" then
+        vim.g.mkdp_filetypes = { "markdown" }
+      end
     end,
   },
 
@@ -154,5 +157,10 @@ return {
   {
     "David-Kunz/gen.nvim",
     cmd = "Gen",
+  },
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^5", -- Recommended
+    lazy = false, -- This plugin is already lazy
   },
 }
