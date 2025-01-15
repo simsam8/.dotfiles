@@ -1,6 +1,6 @@
 alias ..='cd ..'
 alias egrep='egrep --color=auto'
-alias enva='source venv/bin/activate'
+alias enva='source .venv/bin/activate'
 alias envc='virtualenv venv'
 alias envd='deactivate'
 alias fgrep='fgrep --color=auto'
