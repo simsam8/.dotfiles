@@ -25,8 +25,8 @@
     systemSettings = {
       system = "x86_64-linux"; #system architecture
       hostname = "legion5p"; # hostname
-      profile = "personal"; # select a profile from my profiles dir
-      nvidia = true;
+      profile = "non-nixos"; # select a profile from profiles dir
+      nvidia = true; # system has nvidia gpu
       timezone = "Europe/Oslo"; # select timezone
       locale = "en_US.UTF-8"; # select locale
       bootMode = "uefi"; # uefi or bios
@@ -35,9 +35,9 @@
     };
 
     userSettings = rec {
-      username = "simsam8";
+      username = "simsam8"; # current user and username for git
       name = "Simon";
-      email = "simvedaa@gmail.com";
+      email = "simvedaa@gmail.com"; # used for setting up git
       dotfilesDir = "~/.dotfiles";
       theme = "nord";
       # wm = "hyprland"; 
