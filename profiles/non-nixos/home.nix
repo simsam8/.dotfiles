@@ -39,11 +39,7 @@
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     roboto-mono
-    (pkgs.nerdfonts.override {
-      fonts = [
-        "RobotoMono"
-      ];
-     })
+    nerd-fonts.roboto-mono
     obsidian
     neofetch
 
