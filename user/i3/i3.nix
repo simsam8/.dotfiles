@@ -22,7 +22,9 @@ let
 
   exec_always --no-startup-id "setxkbmap -layout us,us,no,no -variant ,dvp,,dvorak -option grp:alt_caps_toggle"
 
-  exec --no-startup-id ~/.dotfiles-minimal/i3/idletimer.sh
+  # Maybe causes freezing idk yet, uncomment to check
+  # exec --no-startup-id ~/.dotfiles-minimal/i3/idletimer.sh
+
   exec_always --no-startup-id autorandr --change
   exec_always --no-startup-id ~/.config/polybar/scripts/launch.sh
 
