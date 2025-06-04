@@ -1,7 +1,7 @@
 { userSettings, ... }:
 
 {
-  home.file."~/.config/picom/picom.conf".text = ''
+  home.file.".config/picom/picom.conf".text = ''
   backend = "glx";
   shadow = false;
 
@@ -33,8 +33,8 @@
   blur-background-fixed = false;
   blur-background-exclude = [
     "window_type = 'dock'"
-    "window_type = 'desktop'"
-    "_GTK_FRAME_EXTENTS@:c"
+    # "window_type = 'desktop'"
+    # "_GTK_FRAME_EXTENTS@:c"
   ];
 
   wintypes:
