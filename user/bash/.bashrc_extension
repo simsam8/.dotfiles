@@ -1,5 +1,0 @@
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
-eval "$(oh-my-posh init bash --config '~/.dotfiles/user/bash/peru_nord.json')"
