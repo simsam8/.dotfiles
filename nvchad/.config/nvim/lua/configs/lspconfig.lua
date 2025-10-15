@@ -1,23 +1,20 @@
-local on_attach = require("nvchad.configs.lspconfig").on_attach
-local on_init = require("nvchad.configs.lspconfig").on_init
-local capabilities = require("nvchad.configs.lspconfig").capabilities
+require("nvchad.configs.lspconfig").defaults()
 
-local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "pyright", "bashls", "nil_ls" }
+-- vim.lsp.config("*", {
+--   root_markers = { ".git" },
+-- })
 
--- lsps with default config
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    on_init = on_init,
-    capabilities = capabilities,
-    root_dir = lspconfig.util.root_pattern('.git');
-  }
-end
+vim.lsp.config("basedpyright", {
+  settings = {
+    basedpyright = {
+      analysis = {
+        typeCheckingMode = "basic",
+      },
+    },
+  },
+})
 
--- -- typescript
--- lspconfig.tsserver.setup {
---   on_attach = on_attach,
---   on_init = on_init,
---   capabilities = capabilities,
--- }
+-- Must enable servers after setting up the configs.
+-- Otherwise the default config is used.
+local servers = { "html", "cssls", "basedpyright", "bashls" }
+vim.lsp.enable(servers)

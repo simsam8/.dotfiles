@@ -2,16 +2,13 @@ return {
   {
     "stevearc/conform.nvim",
     -- event = 'BufWritePre', -- uncomment for format on save
-    config = function()
-      require "configs.conform"
-    end,
+    opts = require "configs.conform",
   },
 
   -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
     config = function()
-      require("nvchad.configs.lspconfig").defaults()
       require "configs.lspconfig"
     end,
   },
@@ -42,8 +39,11 @@ return {
         "cpp",
         "csv",
         "gitignore",
-        "nix",
-        "rust",
+        "latex",
+        "tmux",
+        "terraform",
+        "toml",
+        "yaml",
       },
     },
   },
@@ -53,24 +53,19 @@ return {
     lazy = false,
   },
 
-  -- Enable on non-nixos system
   {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
         "lua-language-server",
         "html-lsp",
-        "pyright",
-        "pylint",
-        "flake8",
-        "black",
+        "basedpyright",
+        "ruff",
         "djlint",
         "bash-language-server",
         "marksman",
         "clangd",
-        "nil",
         "debugpy",
-        "rust-analyzer",
       },
     },
   },

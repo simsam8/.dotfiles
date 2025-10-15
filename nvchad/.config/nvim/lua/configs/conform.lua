@@ -1,7 +1,14 @@
 local options = {
+  formatters = {
+    ruff = {
+      stdin = false,
+      command = "ruff",
+      args = { "format", "$FILENAME" },
+    },
+  },
   formatters_by_ft = {
     lua = { "stylua" },
-    python = { "isort", "black" },
+    python = { "ruff" },
     -- css = { "prettier" },
     -- html = { "prettier" },
   },
@@ -13,4 +20,4 @@ local options = {
   -- },
 }
 
-require("conform").setup(options)
+return options
