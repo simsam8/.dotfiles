@@ -1,5 +1,5 @@
 .vim/autoload/
 .vim/backup/
 .vim/plugged/
-tmux/plugins
+tmux/.config/tmux/plugins
 user/backgrounds/lock.png
