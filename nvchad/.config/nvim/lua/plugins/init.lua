@@ -158,4 +158,12 @@ return {
     version = "^5", -- Recommended
     lazy = false, -- This plugin is already lazy
   },
+  -- {
+  --   "gruvw/strudel.nvim",
+  --   build = "npm install",
+  --   lazy=false,
+  --   config = function()
+  --     require("strudel").setup()
+  --   end,
+  -- },
 }
