@@ -166,4 +166,5 @@ return {
   --     require("strudel").setup()
   --   end,
   -- },
+  { "augmentcode/augment.vim", lazy = false },
 }

@@ -32,4 +32,10 @@ end, { desc = "Toggle Inlay Hints" })
 -- vim.keymap.set("n", "<F8>", dap.restart, { desc = "dap restart" })
 
 -- gen.nvim
-vim.keymap.set({ "n", "v", "x" }, "<leader>]", ":Gen<CR>")
+-- vim.keymap.set({ "n", "v", "x" }, "<leader>]", ":Gen<CR>")
+
+
+-- Augment code
+map("n", "<leader>cc", "<cmd>Augment chat<CR>", { desc = "Augment code chat" })
+map("n", "<leader>ct", "<cmd>Augment chat-toggle<CR>", { desc = "Augment code chat-toggle" })
+map("n", "<leader>cn", "<cmd>Augment chat-toggle<CR>", { desc = "Augment code new chat" })
