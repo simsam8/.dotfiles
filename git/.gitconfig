@@ -1,2 +1,4 @@
 [alias]
   graph = log --all --decorate --oneline --graph
+[init]
+	defaultBranch = main
