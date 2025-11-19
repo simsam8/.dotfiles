@@ -7,6 +7,8 @@ alias envd='deactivate'
 alias gitig='bash ~/scripts/git-ignore-template.sh'
 alias grep='grep --color=auto'
 alias jpl='jupyter lab'
+alias jplh='jpl --no-browser --port 8888'
+alias jplb='ssh -NfL 8888:localhost:8888 simsam8@homelab && xgd-open http://localhost:8888' # bridge to homelab and open jupyterlab
 # alias l='ls -CF --color=auto'
 # alias la='ls -A --color=auto'
 alias ll='ls -a'
