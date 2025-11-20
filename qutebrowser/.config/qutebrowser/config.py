@@ -37,5 +37,11 @@ c.url.searchengines = {
     # "yt": "https://youtube.com/results?search_query={}",
 }
 
+# User agent configuration
+config.set(
+    "content.headers.user_agent",
+    "Mozilla/5.0 ({os_info}; rv:135.0) Gecko/20100101 Firefox/135.0",
+    "https://accounts.google.com/*",
+)
 
 config.source("nord.py")
