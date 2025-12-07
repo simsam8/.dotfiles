@@ -1,9 +1,17 @@
 # .dotfiles
 
-My dotfiles :D
+Personal dotfiles and configuration for my Linux setup running on Omarchy.
+
+## General setup
+
+Using stow to manage dotfiles.
+
+```bash
+stow <folder>
+```
 
 
-## Eduroam setup
+## Eduroam setup on Arch Linux
 
 Get installers from [here](https://cat.eduroam.org/)
 
