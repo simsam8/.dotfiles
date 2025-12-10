@@ -34,8 +34,10 @@ end, { desc = "Toggle Inlay Hints" })
 -- gen.nvim
 -- vim.keymap.set({ "n", "v", "x" }, "<leader>]", ":Gen<CR>")
 
-
 -- Augment code
 map("n", "<leader>cc", "<cmd>Augment chat<CR>", { desc = "Augment code chat" })
 map("n", "<leader>ct", "<cmd>Augment chat-toggle<CR>", { desc = "Augment code chat-toggle" })
 map("n", "<leader>cn", "<cmd>Augment chat-toggle<CR>", { desc = "Augment code new chat" })
+map("n", "<leader>co", function()
+  vim.g.augment_disable_completions = not vim.g.augment_disable_completions
+end, { desc = "Augment toggle completion" })
