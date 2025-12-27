@@ -16,5 +16,5 @@ vim.lsp.config("basedpyright", {
 
 -- Must enable servers after setting up the configs.
 -- Otherwise the default config is used.
-local servers = { "html", "cssls", "basedpyright", "bashls" }
+local servers = { "html", "cssls", "basedpyright", "bashls", "omnisharp", }
 vim.lsp.enable(servers)

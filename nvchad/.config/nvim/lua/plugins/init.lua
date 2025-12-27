@@ -36,6 +36,7 @@ return {
         "css",
         "json",
         "c",
+        "c_sharp",
         "cpp",
         "csv",
         "gitignore",
