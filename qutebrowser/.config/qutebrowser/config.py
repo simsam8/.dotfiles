@@ -24,12 +24,30 @@ config.load_autoconfig(False)
 #   - right
 c.tabs.position = "left"
 
+
+# Bindings
 config.bind("xt", "config-cycle tabs.show always never")
+config.bind("xb", "config-cycle statusbar.show always never")
+config.bind(
+    "xx",
+    "config-cycle statusbar.show always never;; config-cycle tabs.show always never",
+)
 
-c.content.blocking.enabled = False
+config.bind("zm", "hint links spawn mpv {hint-url}")
+config.bind(
+    "zy", "hint links spawn alacritty -e yt-dlp {hint-url} -P ~/Videos/youtube/"
+)
 
+
+# AdBlock
+c.content.blocking.enabled = True
+c.content.blocking.method = "both"
+
+# Dark mode
+c.colors.webpage.darkmode.enabled = True
+
+# URL
 c.url.start_pages = ["https://google.com"]
-
 c.url.searchengines = {
     "DEFAULT": "https://google.com/search?q={}",
     # "g": "https://google.com/search?q={}",
@@ -44,4 +62,5 @@ config.set(
     "https://accounts.google.com/*",
 )
 
+# Nord theme
 config.source("nord.py")
