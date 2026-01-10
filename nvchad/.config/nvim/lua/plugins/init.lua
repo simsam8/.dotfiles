@@ -40,7 +40,6 @@ return {
         "cpp",
         "csv",
         "gitignore",
-        "latex",
         "tmux",
         "terraform",
         "toml",
@@ -112,6 +111,20 @@ return {
       },
     },
   },
+  {
+    "lervag/vimtex",
+    lazy = false, -- we don't want to lazy load VimTeX
+    -- tag = "v2.15", -- uncomment to pin to a specific release
+    init = function()
+      -- VimTeX configuration goes here, e.g.
+      vim.g.vimtex_view_method = "zathura"
+    end,
+  },
+  {
+    "let-def/texpresso.vim",
+    ft = { "tex", "plaintex", "latex" },
+    cmd = "TexPresso",
+  },
 
   -- {
   --   "rcarriga/nvim-dap-ui",
@@ -150,10 +163,6 @@ return {
   --     require("dap-python").setup(path)
   --   end,
   -- },
-  {
-    "David-Kunz/gen.nvim",
-    cmd = "Gen",
-  },
   {
     "mrcjkb/rustaceanvim",
     version = "^5", -- Recommended
