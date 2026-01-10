@@ -1,10 +1,11 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
 
+-- Augment code
 vim.g.augment_workspace_folders = {
   "~/work/diggecard_datapipeline/",
   "~/school/master_thesis_code/",
-  "~/personal/xmas_surprise_calendar/",
+  "~/school/master_thesis_notes/",
   "~/.dotfiles/",
   "~/personal/job_search/",
   "~/work/notion-data-dashboard/"
