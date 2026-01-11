@@ -28,6 +28,7 @@ c.tabs.position = "left"
 # Bindings
 config.bind("xt", "config-cycle tabs.show always never")
 config.bind("xb", "config-cycle statusbar.show always never")
+config.bind("xd", "config-cycle colors.webpage.darkmode.enabled true false")
 config.bind(
     "xx",
     "config-cycle statusbar.show always never;; config-cycle tabs.show always never",
@@ -38,6 +39,8 @@ config.bind(
     "zy", "hint links spawn alacritty -e yt-dlp {hint-url} -P ~/Videos/youtube/"
 )
 
+
+c.auto_save.session = True
 
 # AdBlock
 c.content.blocking.enabled = True
