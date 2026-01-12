@@ -24,26 +24,3 @@ Get installers from [here](https://cat.eduroam.org/)
 If multiple network daemons are running, such as systemd-networkd and NetworkManager, disable the one you don't use.
 Use this [thread](https://bbs.archlinux.org/viewtopic.php?id=282947) to resoleve any issues.
 
-
-## Packages (TODO: add as install script)
-
-- yt-dlp
-- qutebrowser
-- zotero
-- vesktop
-- tmux
-- texpresso-git
-- texlive-latexrecommended
-- texlive-latex
-- texlive-fontsrecommended
-- texlive-fontsextra
-- texlive-basic
-- stow
-- python-adblock
-- pandoc-cli
-- nvtop
-- btop
-- guitarix
-- dbeaver
-- bitwarden
-- rbw
