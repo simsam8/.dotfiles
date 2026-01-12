@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# Check if rbw is installed
+if ! command -v rbw &> /dev/null; then
+    notify-send "Password Manager" "rbw is not installed. Please install it first."
+    exit 1
+fi
+
 selected=$(rbw list --fields user,name | walker -d)
 
 if [[ -n "$selected" ]]; then
