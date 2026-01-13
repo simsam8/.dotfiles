@@ -79,6 +79,7 @@ packages=(
     "dbeaver"
     "bitwarden"
     "rbw"
+    "yazi"
 )
 
 # AUR packages
