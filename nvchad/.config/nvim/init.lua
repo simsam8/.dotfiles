@@ -8,7 +8,8 @@ vim.g.augment_workspace_folders = {
   "~/school/master_thesis_notes/",
   "~/.dotfiles/",
   "~/personal/job_search/",
-  "~/work/notion-data-dashboard/"
+  "~/work/notion-data-dashboard/",
+  "~/personal/personal_website/"
 }
 
 -- bootstrap lazy and all plugins
