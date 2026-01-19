@@ -86,6 +86,7 @@ packages=(
 aur_packages=(
     "texpresso-git"
     "vesktop"
+    "spotatui"
 )
 
 print_status "Installing official repository packages..."
