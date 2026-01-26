@@ -5,3 +5,4 @@ tmux/.config/tmux/plugins
 user/backgrounds/lock.png
 
 qutebrowser/.config/qutebrowser/autoconfig.yml
+.DS_Store
