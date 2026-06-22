@@ -83,13 +83,6 @@ packages=(
   "difftastic"
 )
 
-# AUR packages
-aur_packages=(
-  "texpresso-git"
-  "vesktop"
-  "spotatui"
-)
-
 print_status "Installing official repository packages..."
 for package in "${packages[@]}"; do
   install_if_missing "$package"
