@@ -40,10 +40,10 @@ hl.unbind("SUPER ALT + F") -- was: Full width
 hl.unbind("SUPER + ESCAPE") -- was: System menu
 hl.unbind("SUPER + D") -- no default
 hl.unbind("SUPER + B") -- no default
-hl.unbind("SUPER SHIFT + D") -- was: Docker
-hl.unbind("SUPER SHIFT + F") -- was: File manager
-hl.unbind("SUPER SHIFT + P") -- was: Google Photos
-hl.unbind("SUPER SHIFT + S") -- was: Google Maps
+hl.unbind("SUPER + SHIFT + D") -- was: Docker
+hl.unbind("SUPER + SHIFT + F") -- was: File manager
+hl.unbind("SUPER + SHIFT + P") -- was: Google Photos
+hl.unbind("SUPER + SHIFT + S") -- was: Google Maps
 
 -- Terminal
 o.bind("SUPER + T", "Terminal", "alacritty")
