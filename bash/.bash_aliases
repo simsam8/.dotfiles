@@ -12,9 +12,19 @@ alias obridge='bash ~/scripts/open_local_host_bridge.sh'
 alias cbridge='bash ~/scripts/close_local_host_bridge.sh'
 # alias l='ls -CF --color=auto'
 # alias la='ls -A --color=auto'
-alias ll='ls -a'
+if command -v eza &>/dev/null; then
+  alias ls='eza -lh --group-directories-first --icons=auto'
+  alias ll='ls -a'
+  alias lt='eza --tree --level=2 --long --icons --git'
+  alias lta='lt -a'
+fi
 # alias ll='ls -laF --color=auto'
 # alias ls='ls --color=auto'
+# Directories
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
 alias nv='nvim'
 alias tm='tmux'
 alias tms='~/scripts/tmux-sessionizer'
