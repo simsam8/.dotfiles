@@ -1,3 +1,6 @@
 tmux/.config/tmux/plugins
 qutebrowser/.config/qutebrowser/autoconfig.yml
 .DS_Store
+
+# Symlink to Omarchy current theme
+lazyvim/.config/nvim/lua/plugins/theme.lua
