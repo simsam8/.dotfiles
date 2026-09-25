@@ -11,3 +11,6 @@
   dft = -c diff.external=difft diff
 [init]
 	defaultBranch = main
+[user]
+	email = simon.vedaa@xledger.com
+	name = Simon Vedaa
